@@ -71,7 +71,7 @@ The schedule may change. **All deadlines are at 15:00 (CEST).**
 | [Memory Management](https://github.com/ls1-sys-prog-course/task5-memory) | [Felix](https://github.com/gustifix)              | 11.12.23     | 25.12.23 | 30     | [link](./slides/05-memory_management.pdf)   | [Lecture](https://youtu.be/1LxVzohqRx0)                                       |
 | [Networking](https://github.com/ls1-sys-prog-course/task6-sockets)       | [Ilya](https://github.com/Meandres)               | 08.01.24     | 15.01.24 | 30     | [link](./slides/06-network_programming.pdf) | [Lecture](https://youtu.be/fDRaXnhjoDE)                                       |
 | [Performance](https://github.com/ls1-sys-prog-course/task7-performance)  | [Anatole](https://github.com/jedichen121)         | 15.01.24     | 30.01.24 | 40     | [link](./slides/07-performance.pdf)         | [Lecture](https://youtu.be/o1SkOoCyHDI)                                       |
-| [Compiler/LLVM](https://github.com/ls1-sys-prog-course/task9-llvm)       | [Martin](https://github.com/martin-fink)          | 29.01.24     | 12.02.24 | 30     | [link](./slides/09-llvm.pdf)                | [Lecture](https://youtu.be/7SSkksFEKfk)                                       |
+| [Compiler/LLVM](https://github.com/ls1-sys-prog-course/task8-llvm)       | [Martin](https://github.com/martin-fink)          | 29.01.24     | 12.02.24 | 30     | [link](./slides/08-llvm.pdf)                | [Lecture](https://youtu.be/7SSkksFEKfk)                                       |
 
 
 Note that
