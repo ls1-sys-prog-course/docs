@@ -1,4 +1,17 @@
-# Practical course: Systems Programming -- WiSe 2023
+# Practical course: Systems Programming -- WiSe 2024/25
+
+<!-- TODOs for WiSe24
+
+- Update Zoom Links
+- Update preliminary meeting slides
+- Update preliminary meeting schedule
+- Update task release schedule
+
+- Set-up github classrom
+- Set-up local runners
+- Invite other chair members
+
+-->
 
 ## Chair website
 
@@ -50,11 +63,11 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
 
 ## Meeting place
 
-- Preliminary meeting: July 6th (Thu), 2023 01:00 PM CET online (zoom)
+- Preliminary meeting: TBD (zoom)
     - [Slide](./slides/preliminary_meeting.pdf)
-    - [Zoom link](https://tum-conf.zoom.us/j/66631605558?pwd=N3ZzdTRaNEdxQk1MU3VjMElXU2xzQT09)
+    - [Zoom link](https://tum-conf.zoom.us/j/)
 - Q&A session: Weekly on Thursday from 03:00 PM to 04:00 PM CET online (zoom)
-    - [Zoom link](https://tum-conf.zoom-x.de/j/67723087551?pwd=UVZoamhtbmhPTDZpRVdEKzZTbVBUdz09)
+    - [Zoom link](https://tum-conf.zoom-x.de/j/)
 
 ## Tasks
 
@@ -63,15 +76,15 @@ The schedule may change. **All deadlines are at 15:00 (CEST).**
 
 | Task                                                                     | Organizer                                         | Published on | Deadline | Points | Slide                                       | Video                                                                         |
 |--------------------------------------------------------------------------|---------------------------------------------------|--------------|----------|--------|---------------------------------------------|-------------------------------------------------------------------------------|
-| [Introduction](https://github.com/ls1-sys-prog-course/task0-sort)        | [Jiyang](https://github.com/jedichen121)          | 16.10.23     | 23.10.23 | 0      | [link](./slides/00-introduction.pdf)        | [Lecture]( https://youtu.be/Kv8OgLs1crI)                                      |
-| [System Calls](https://github.com/ls1-sys-prog-course/task1-syscalls)    | [Jiyang](https://github.com/jedichen121)          | 16.10.23     | 30.10.23 | 30     | [link](./slides/01-system_calls.pdf)        | [Lecture](https://youtu.be/qO33G1od3Xo)                                       |
-| [File I/O](https://github.com/ls1-sys-prog-course/task2-fileio)          | [Babis](https://github.com/cmainas)               | 30.10.23     | 13.11.23 | 30     | [link](./slides/02-files.pdf), [FUSE](./slides/02-fuse.pdf)               | [Lecture](https://youtu.be/wDPH8DYZwCg), [FUSE](https://www.youtube.com/watch?v=i3YJK3es-iQ)                                        |
-| [Processes](https://github.com/ls1-sys-prog-course/task3-processes)      | [Sebastian](https://github.com/Sebastian-Reimers) | 13.11.23     | 27.11.23 | 30     | [link](./slides/03-processes.pdf)           | [Lecture](https://youtu.be/qNzgterdPng)                                       |
-| [Concurrency](https://github.com/ls1-sys-prog-course/task4-concurrency)  | [Ilya](https://github.com/Meandres)               | 27.11.23     | 11.12.23 | 30     | [link](./slides/04-concurrency.pdf)         | [Lecture](https://youtu.be/Bj-1pFh8Bck)                                       |
-| [Memory Management](https://github.com/ls1-sys-prog-course/task5-memory) | [Felix](https://github.com/gustifix)              | 11.12.23     | 25.12.23 | 30     | [link](./slides/05-memory_management.pdf)   | [Lecture](https://youtu.be/1LxVzohqRx0)                                       |
-| [Networking](https://github.com/ls1-sys-prog-course/task6-sockets)       | [Ilya](https://github.com/Meandres)               | 08.01.24     | 15.01.24 | 30     | [link](./slides/06-network_programming.pdf) | [Lecture](https://youtu.be/fDRaXnhjoDE)                                       |
-| [Performance](https://github.com/ls1-sys-prog-course/task7-performance)  | [Anatole](https://github.com/jedichen121)         | 15.01.24     | 30.01.24 | 40     | [link](./slides/07-performance.pdf)         | [Lecture](https://youtu.be/o1SkOoCyHDI)                                       |
-| [Compiler/LLVM](https://github.com/ls1-sys-prog-course/task8-llvm)       | [Martin](https://github.com/martin-fink)          | 29.01.24     | 12.02.24 | 30     | [link](./slides/08-llvm.pdf)                | [Lecture](https://youtu.be/7SSkksFEKfk)                                       |
+| [Introduction](https://github.com/ls1-sys-prog-course/task0-sort)        | [TBD](TBD)  | TBD     | TBD | 0      | [link](./slides/00-introduction.pdf)        | [Lecture]( https://youtu.be/Kv8OgLs1crI)                                      |
+| [System Calls](https://github.com/ls1-sys-prog-course/task1-syscalls)    | [TBD](TBD)  | TBD     | TBD | 30     | [link](./slides/01-system_calls.pdf)        | [Lecture](https://youtu.be/qO33G1od3Xo)                                       |
+| [File I/O](https://github.com/ls1-sys-prog-course/task2-fileio)          | [TBD](TBD)  | TBD     | TBD | 30     | [link](./slides/02-files.pdf), [FUSE](./slides/02-fuse.pdf)               | [Lecture](https://youtu.be/wDPH8DYZwCg), [FUSE](https://www.youtube.com/watch?v=i3YJK3es-iQ)                                        |
+| [Processes](https://github.com/ls1-sys-prog-course/task3-processes)      | [TBD](TBD)  | TBD     | TBD | 30     | [link](./slides/03-processes.pdf)           | [Lecture](https://youtu.be/qNzgterdPng)                                       |
+| [Concurrency](https://github.com/ls1-sys-prog-course/task4-concurrency)  | [TBD](TBD)  | TBD     | TBD | 30     | [link](./slides/04-concurrency.pdf)         | [Lecture](https://youtu.be/Bj-1pFh8Bck)                                       |
+| [Memory Management](https://github.com/ls1-sys-prog-course/task5-memory) | [TBD](TBD)  | TBD     | TBD | 30     | [link](./slides/05-memory_management.pdf)   | [Lecture](https://youtu.be/1LxVzohqRx0)                                       |
+| [Networking](https://github.com/ls1-sys-prog-course/task6-sockets)       | [TBD](TBD)  | TBD     | TBD | 30     | [link](./slides/06-network_programming.pdf) | [Lecture](https://youtu.be/fDRaXnhjoDE)                                       |
+| [Performance](https://github.com/ls1-sys-prog-course/task7-performance)  | [TBD](TBD)  | TBD     | TBD | 40     | [link](./slides/07-performance.pdf)         | [Lecture](https://youtu.be/o1SkOoCyHDI)                                       |
+| [Compiler/LLVM](https://github.com/ls1-sys-prog-course/task8-llvm)       | [TBD](TBD)  | TBD     | TBD | 30     | [link](./slides/08-llvm.pdf)                | [Lecture](https://youtu.be/7SSkksFEKfk)                                       |
 
 
 Note that
@@ -135,19 +148,20 @@ Grades are computed as follows:
 We will use Slack for all communication. Please enroll in our Slack workspace using your official TUM email address.
 
 - **Slack workspace:** https://ls1-courses-tum.slack.com
-- **Slack channel:** #ws-23-sys-prog
+- **Slack channel:** #ws-24-sys-prog
 
 ## Other resources
 
 - [Youtube playlist](https://www.youtube.com/playlist?list=PLfKm1-FQibbB3U8jBJ5-mF3jmH0aCiQ7V)
 - [Bugtracker](https://github.com/ls1-sys-prog-course/docs/issues)
 - [Docker image](https://github.com/orgs/ls1-courses/packages/container/package/ls1-runner)
-- [The previous semester (SoSe22)](https://github.com/ls1-sys-prog-course-archive-SoSe22/docs)
+- [The previous semester (WiSe23)](https://github.com/ls1-sys-prog-course-archive-WiSe23/docs)
   - NOTE: The course material is being kept updated; therefore, the old version has differences.
 
 ## Contact
 
 We *strongly* prefer Slack for all communications. For any further questions/comments, please contact the course organizer(s):
 
-- [Jiyang Chen]
+- [Anatole Lefort]
+- [Atsushi Koshiba]
 - [Prof. Bhatotia](https://dse.in.tum.de/bhatotia/)
