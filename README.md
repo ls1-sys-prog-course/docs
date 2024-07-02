@@ -3,8 +3,6 @@
 <!-- TODOs for WiSe24
 
 - Update Zoom Links
-- Update preliminary meeting slides
-- Update preliminary meeting schedule
 - Update task release schedule
 
 - Set-up github classrom
@@ -47,13 +45,13 @@ More specifically, we will cover the following topics through a set of programmi
 - Memory management: How virtual memory, heap, stack, and how malloc() works
 - Networking: How to handle network protocols, efficient ways to implement servers
 - Performance: How to bring out the performance of the hardware
-- Compiler/LLVM: Hom to implement LLVM passes to improve compiler generated codes
+- Compiler/LLVM: Hom to implement LLVM passes to improve compiler-generated codes
 
 
 This course consists of a set of modules related to different aspects of systems programming.
 For each of these modules, there is a dedicated assignment that will help students dig deeper into the concepts and get familiar with them with actual, useful, hands-on tasks.
 There is also a weekly Q&A meeting where we answer students' questions and discuss the specific goal of each assignment.
-The students will be required to perform tasks within a time frame (around 2-3 weeks depending on the task) and submit their work in the online evaluation system.
+The students will be required to perform tasks within a time frame (around 2-3 weeks, depending on the task) and submit their work in the online evaluation system.
 The submitted workpieces will then be evaluated, and based on that, a grade will be calculated for each assignment.
 
 ## Objectives
@@ -63,15 +61,15 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
 
 ## Meeting place
 
-- Preliminary meeting: TBD (zoom)
+- Preliminary meeting: July 4th, 2024 13:00 CEST (Zoom)
     - [Slide](./slides/preliminary_meeting.pdf)
-    - [Zoom link](https://tum-conf.zoom.us/j/)
+    - [Zoom link](https://tum-conf.zoom-x.de/j/63212709724?pwd=lfDwbHWRKH8WY8CI6zB36EtWQUrSCe.1)
 - Q&A session: Weekly on Thursday from 03:00 PM to 04:00 PM CET online (zoom)
     - [Zoom link](https://tum-conf.zoom-x.de/j/)
 
 ## Tasks
 
-Please refer to the respective task repositories (that are released on the published date) for detail.
+Please refer to the respective task repositories (that are released on the published date) for details.
 The schedule may change. **All deadlines are at 15:00 (CEST).**
 
 | Task                                                                     | Organizer                                         | Published on | Deadline | Points | Slide                                       | Video                                                                         |
