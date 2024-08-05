@@ -160,6 +160,6 @@ We will use Slack for all communication. Please enroll in our Slack workspace us
 
 We *strongly* prefer Slack for all communications. For any further questions/comments, please contact the course organizer(s):
 
-- [Anatole Lefort]
-- [Atsushi Koshiba]
+- [Anatole Lefort](https://anatolelefort.net/)
+- [Atsushi Koshiba](https://atsushikoshiba.github.io/)
 - [Prof. Bhatotia](https://dse.in.tum.de/bhatotia/)
