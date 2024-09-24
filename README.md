@@ -44,8 +44,8 @@ More specifically, we will cover the following topics through a set of programmi
 - Processes: Different system calls related to process handling like fork(), execve(), wait()
 - Memory management: How virtual memory, heap, stack, and how malloc() works
 - Networking: How to handle network protocols, efficient ways to implement servers
-- Performance: How to bring out the performance of the hardware
-- Compiler/LLVM: Hom to implement LLVM passes to improve compiler-generated codes
+- Performance: How to bring out the performance of the hardware (**C++ only**)
+- Compiler/LLVM: Hom to implement LLVM passes to improve compiler-generated codes (**C++ only**)
 
 
 This course consists of a set of modules related to different aspects of systems programming.
@@ -72,17 +72,17 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
 Please refer to the respective task repositories (that are released on the published date) for details.
 The schedule may change. **All deadlines are at 15:00 (CEST).**
 
-| Task                                                                     | Organizer                                         | Published on | Deadline | Points | Slide                                       | Video                                                                         |
-|--------------------------------------------------------------------------|---------------------------------------------------|--------------|----------|--------|---------------------------------------------|-------------------------------------------------------------------------------|
-| [Introduction](https://github.com/ls1-sys-prog-course/task0-sort)        | [TBD](TBD)  | TBD     | TBD | 0      | [link](./slides/00-introduction.pdf)        | [Lecture]( https://youtu.be/Kv8OgLs1crI)                                      |
-| [System Calls](https://github.com/ls1-sys-prog-course/task1-syscalls)    | [TBD](TBD)  | TBD     | TBD | 30     | [link](./slides/01-system_calls.pdf)        | [Lecture](https://youtu.be/qO33G1od3Xo)                                       |
-| [File I/O](https://github.com/ls1-sys-prog-course/task2-fileio)          | [TBD](TBD)  | TBD     | TBD | 30     | [link](./slides/02-files.pdf), [FUSE](./slides/02-fuse.pdf)               | [Lecture](https://youtu.be/wDPH8DYZwCg), [FUSE](https://www.youtube.com/watch?v=i3YJK3es-iQ)                                        |
-| [Processes](https://github.com/ls1-sys-prog-course/task3-processes)      | [TBD](TBD)  | TBD     | TBD | 30     | [link](./slides/03-processes.pdf)           | [Lecture](https://youtu.be/qNzgterdPng)                                       |
-| [Concurrency](https://github.com/ls1-sys-prog-course/task4-concurrency)  | [TBD](TBD)  | TBD     | TBD | 30     | [link](./slides/04-concurrency.pdf)         | [Lecture](https://youtu.be/Bj-1pFh8Bck)                                       |
-| [Memory Management](https://github.com/ls1-sys-prog-course/task5-memory) | [TBD](TBD)  | TBD     | TBD | 30     | [link](./slides/05-memory_management.pdf)   | [Lecture](https://youtu.be/1LxVzohqRx0)                                       |
-| [Networking](https://github.com/ls1-sys-prog-course/task6-sockets)       | [TBD](TBD)  | TBD     | TBD | 30     | [link](./slides/06-network_programming.pdf) | [Lecture](https://youtu.be/fDRaXnhjoDE)                                       |
-| [Performance](https://github.com/ls1-sys-prog-course/task7-performance)  | [TBD](TBD)  | TBD     | TBD | 40     | [link](./slides/07-performance.pdf)         | [Lecture](https://youtu.be/o1SkOoCyHDI)                                       |
-| [Compiler/LLVM](https://github.com/ls1-sys-prog-course/task8-llvm)       | [TBD](TBD)  | TBD     | TBD | 30     | [link](./slides/08-llvm.pdf)                | [Lecture](https://youtu.be/7SSkksFEKfk)                                       |
+| Task                                                                     | Organizer                                         | Published on | Deadline | Points | Language | Slide                                       | Video                                                                         |
+|--------------------------------------------------------------------------|---------------------------------------------------|--------------|----------|--------|----------|---------------------------------------------|-------------------------------------------------------------------------------|
+| [Introduction](https://github.com/ls1-sys-prog-course/task0-sort)        | [Theofilos Augoustis](https://github.com/taugoust)| 14.10.2024     | 28.10.2024 | 0      | C/C++, Rust | [link](./slides/00-introduction.pdf)        | [Lecture]( https://youtu.be/Kv8OgLs1crI)                                      |
+| [System Calls](https://github.com/ls1-sys-prog-course/task1-syscalls)    | [Jinwen Pan](https://github.com/JinwenPan)        | 21.10.2024     | 04.11.2024 | 30     | C/C++, Rust | [link](./slides/01-system_calls.pdf)        | [Lecture](https://youtu.be/qO33G1od3Xo)                                       |
+| [File I/O](https://github.com/ls1-sys-prog-course/task2-fileio)          | [Jinwen Pan](https://github.com/JinwenPan)        | 28.10.2024     | 11.11.2024 | 30     | C/C++, Rust | [link](./slides/02-files.pdf), [FUSE](./slides/02-fuse.pdf)               | [Lecture](https://youtu.be/wDPH8DYZwCg), [FUSE](https://www.youtube.com/watch?v=i3YJK3es-iQ)                                        |
+| [Processes](https://github.com/ls1-sys-prog-course/task3-processes)      | [Theofilos Augoustis](https://github.com/taugoust)| 04.11.2024     | 18.11.2024 | 30     | C/C++, Rust | [link](./slides/03-processes.pdf)           | [Lecture](https://youtu.be/qNzgterdPng)                                       |
+| [Concurrency](https://github.com/ls1-sys-prog-course/task4-concurrency)  | [Theofilos Augoustis](https://github.com/taugoust)| 11.11.2024     | 25.11.2024 | 30     | C/C++, Rust | [link](./slides/04-concurrency.pdf)         | [Lecture](https://youtu.be/Bj-1pFh8Bck)                                       |
+| [Memory Management](https://github.com/ls1-sys-prog-course/task5-memory) | [Simon Kammermeier](https://github.com/Simon04090)| 18.11.2024     | 02.12.2024 | 30     | C/C++, Rust | [link](./slides/05-memory_management.pdf)   | [Lecture](https://youtu.be/1LxVzohqRx0)                                       |
+| [Networking](https://github.com/ls1-sys-prog-course/task6-sockets)       | [Simon Kammermeier](https://github.com/Simon04090)| 25.11.2024     | 09.12.2024 | 30     | C/C++, Rust | [link](./slides/06-network_programming.pdf) | [Lecture](https://youtu.be/fDRaXnhjoDE)                                       |
+| [Performance](https://github.com/ls1-sys-prog-course/task7-performance)  | [Hendrik Hübner](https://github.com/HendrikHuebner)| 02.12.2024    | 16.12.2024 | 40     | C++         | [link](./slides/07-performance.pdf)         | [Lecture](https://youtu.be/o1SkOoCyHDI)                                       |
+| [Compiler/LLVM](https://github.com/ls1-sys-prog-course/task8-llvm)       | [Hendrik Hübner](https://github.com/HendrikHuebner)| 09.12.2024    | 23.12.2024 | 30     | C++         | [link](./slides/08-llvm.pdf)                | [Lecture](https://youtu.be/7SSkksFEKfk)                                       |
 
 
 Note that
