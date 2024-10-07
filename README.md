@@ -123,7 +123,7 @@ Note that only the test results on CI count toward grading.
 
 ## Grades
 
-Grades are computed as follows:
+Using [this script](https://gist.github.com/HE7086/87025cbcf622898558ba6674658719e3), grades are computed as follows:
 
 |From| To|Grade|Interval|
 |----|---|-----|-----|
