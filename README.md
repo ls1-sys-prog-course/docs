@@ -65,7 +65,7 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
     - [Slide](./slides/preliminary_meeting.pdf)
     - [Zoom link](https://tum-conf.zoom-x.de/j/63212709724?pwd=lfDwbHWRKH8WY8CI6zB36EtWQUrSCe.1)
 - Q&A session: Weekly on Thursday from 03:00 PM to 04:00 PM CET online (zoom)
-    - [Zoom link](https://tum-conf.zoom-x.de/j/)
+    - [Zoom link](https://tum-conf.zoom-x.de/j/68822029722?pwd=2VVf8RAQQDRtp3uHMMvu4uafjJ7hxT.1)
 
 ## Tasks
 
