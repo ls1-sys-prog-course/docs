@@ -1,6 +1,6 @@
-# Practical course: Systems Programming -- WiSe 2024/25
+# Practical course: Systems Programming -- SoSe 2025
 
-<!-- TODOs for WiSe24
+<!-- TODOs for SoSe25
 
 - Update Zoom Links
 - Update task release schedule
@@ -61,11 +61,11 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
 
 ## Meeting place
 
-- Preliminary meeting: July 4th, 2024 13:00 CEST (Zoom)
+- Preliminary meeting: TDB (Zoom)
     - [Slide](./slides/preliminary_meeting.pdf)
-    - [Zoom link](https://tum-conf.zoom-x.de/j/63212709724?pwd=lfDwbHWRKH8WY8CI6zB36EtWQUrSCe.1)
+    - [Zoom link](https://tum-conf.zoom-x.de/j/)
 - Q&A session: Weekly on Thursday from 03:00 PM to 04:00 PM CET online (zoom)
-    - [Zoom link](https://tum-conf.zoom-x.de/j/68822029722?pwd=2VVf8RAQQDRtp3uHMMvu4uafjJ7hxT.1)
+    - [Zoom link](https://tum-conf.zoom-x.de/j/)
 
 ## Tasks
 
@@ -74,15 +74,15 @@ The schedule may change. **All deadlines are at 15:00 (CEST).**
 
 | Task                                                                     | Organizer                                         | Published on | Deadline | Points | Language | Slide                                       | Video                                                                         |
 |--------------------------------------------------------------------------|---------------------------------------------------|--------------|----------|--------|----------|---------------------------------------------|-------------------------------------------------------------------------------|
-| [Introduction](https://github.com/ls1-sys-prog-course/task0-sort)        | [Theofilos Augoustis](https://github.com/taugoust)| 14.10.2024     | 28.10.2024 | 0      | C/C++, Rust | [link](./slides/00-introduction.pdf)        | [Lecture]( https://youtu.be/Kv8OgLs1crI)                                      |
-| [System Calls](https://github.com/ls1-sys-prog-course/task1-syscalls)    | [Jinwen Pan](https://github.com/JinwenPan)        | 21.10.2024     | 04.11.2024 | 30     | C/C++, Rust | [link](./slides/01-system_calls.pdf)        | [Lecture](https://youtu.be/qO33G1od3Xo)                                       |
-| [File I/O](https://github.com/ls1-sys-prog-course/task2-fileio)          | [Jinwen Pan](https://github.com/JinwenPan)        | 28.10.2024     | 11.11.2024 | 30     | C/C++, Rust | [link](./slides/02-files.pdf), [FUSE](./slides/02-fuse.pdf)               | [Lecture](https://youtu.be/wDPH8DYZwCg), [FUSE](https://www.youtube.com/watch?v=i3YJK3es-iQ)                                        |
-| [Processes](https://github.com/ls1-sys-prog-course/task3-processes)      | [Theofilos Augoustis](https://github.com/taugoust)| 04.11.2024     | 18.11.2024 | 30     | C/C++, Rust | [link](./slides/03-processes.pdf)           | [Lecture](https://youtu.be/qNzgterdPng)                                       |
-| [Concurrency](https://github.com/ls1-sys-prog-course/task4-concurrency)  | [Theofilos Augoustis](https://github.com/taugoust)| 11.11.2024     | 25.11.2024 | 30     | C/C++, Rust | [link](./slides/04-concurrency.pdf)         | [Lecture](https://youtu.be/Bj-1pFh8Bck)                                       |
-| [Memory Management](https://github.com/ls1-sys-prog-course/task5-memory) | [Simon Kammermeier](https://github.com/Simon04090)| 18.11.2024     | 02.12.2024 | 30     | C/C++, Rust | [link](./slides/05-memory_management.pdf)   | [Lecture](https://youtu.be/1LxVzohqRx0)                                       |
-| [Networking](https://github.com/ls1-sys-prog-course/task6-sockets)       | [Simon Kammermeier](https://github.com/Simon04090)| 25.11.2024     | 09.12.2024 | 30     | C/C++, Rust | [link](./slides/06-network_programming.pdf) | [Lecture](https://youtu.be/fDRaXnhjoDE)                                       |
-| [Performance](https://github.com/ls1-sys-prog-course/task7-performance)  | [Anubhav Panda](https://github.com/halalboro) and [Theofilos Augoustis](https://github.com/taugoust)| 02.12.2024    | 16.12.2024 | 40     | C++         | [link](./slides/07-performance.pdf)         | [Lecture](https://youtu.be/o1SkOoCyHDI)                                       |
-| [Compiler/LLVM](https://github.com/ls1-sys-prog-course/task8-llvm)       | [Anubhav Panda](https://github.com/halalboro) and [Theofilos Augoustis](https://github.com/taugoust)| 09.12.2024    | 23.12.2024 | 30     | C++         | [link](./slides/08-llvm.pdf)                | [Lecture](https://youtu.be/7SSkksFEKfk)                                       |
+| [Introduction](https://github.com/ls1-sys-prog-course/task0-sort)        | [TBD](TBD)    | TBD    | TBD     | 0      | C/C++, Rust | [link](./slides/00-introduction.pdf)        | [Lecture]( https://youtu.be/Kv8OgLs1crI)                                      |
+| [System Calls](https://github.com/ls1-sys-prog-course/task1-syscalls)    | [TBD](TBD)    | TBD    | TBD     | 30     | C/C++, Rust | [link](./slides/01-system_calls.pdf)        | [Lecture](https://youtu.be/qO33G1od3Xo)                                       |
+| [File I/O](https://github.com/ls1-sys-prog-course/task2-fileio)          | [TBD](TBD)    | TBD    | TBD     | 30     | C/C++, Rust | [link](./slides/02-files.pdf), [FUSE](./slides/02-fuse.pdf)               | [Lecture](https://youtu.be/wDPH8DYZwCg), [FUSE](https://www.youtube.com/watch?v=i3YJK3es-iQ)                                        |
+| [Processes](https://github.com/ls1-sys-prog-course/task3-processes)      | [TBD](TBD)    | TBD    | TBD     | 30     | C/C++, Rust | [link](./slides/03-processes.pdf)           | [Lecture](https://youtu.be/qNzgterdPng)                                       |
+| [Concurrency](https://github.com/ls1-sys-prog-course/task4-concurrency)  | [TBD](TBD)    | TBD    | TBD     | 30     | C/C++, Rust | [link](./slides/04-concurrency.pdf)         | [Lecture](https://youtu.be/Bj-1pFh8Bck)                                       |
+| [Memory Management](https://github.com/ls1-sys-prog-course/task5-memory) | [TBD](TBD)    | TBD    | TBD     | 30     | C/C++, Rust | [link](./slides/05-memory_management.pdf)   | [Lecture](https://youtu.be/1LxVzohqRx0)                                       |
+| [Networking](https://github.com/ls1-sys-prog-course/task6-sockets)       | [TBD](TBD)    | TBD    | TBD     | 30     | C/C++, Rust | [link](./slides/06-network_programming.pdf) | [Lecture](https://youtu.be/fDRaXnhjoDE)                                       |
+| [Performance](https://github.com/ls1-sys-prog-course/task7-performance)  | [TBD](TBD)    | TBD    | TBD     | 40     | C++         | [link](./slides/07-performance.pdf)         | [Lecture](https://youtu.be/o1SkOoCyHDI)                                       |
+| [Compiler/LLVM](https://github.com/ls1-sys-prog-course/task8-llvm)       | [TBD](TBD)    | TBD    | TBD     | 30     | C++         | [link](./slides/08-llvm.pdf)                | [Lecture](https://youtu.be/7SSkksFEKfk)                                       |
 
 
 Note that
@@ -141,19 +141,22 @@ Using [this script](https://gist.github.com/HE7086/87025cbcf622898558ba667465871
 |239 |245| 1.3 |   7 |
 |246 |250| 1.0 |   5 |
 
-## Slack workspace
+## Communication Medium
 
-We will use Slack for all communication. Please enroll in our Slack workspace using your official TUM email address.
+We will use the official [Zulip chat](https://zulip.in.tum.de/) server hosted by TUM for all communication.
+<!--
+Please enroll in our Slack workspace using your official TUM email address.
 
 - **Slack workspace:** https://ls1-courses-tum.slack.com
 - **Slack channel:** #ws-24-sys-prog
+-->
 
 ## Other resources
 
 - [Youtube playlist](https://www.youtube.com/playlist?list=PLfKm1-FQibbB3U8jBJ5-mF3jmH0aCiQ7V)
 - [Bugtracker](https://github.com/ls1-sys-prog-course/docs/issues)
 - [Docker image](https://github.com/orgs/ls1-courses/packages/container/package/ls1-runner)
-- [The previous semester (WiSe23)](https://github.com/ls1-sys-prog-course-archive-WiSe23/docs)
+- [The previous semester (WiSe24)](https://github.com/ls1-sys-prog-course-archive-WiSe24/docs)
   - NOTE: The course material is being kept updated; therefore, the old version has differences.
 
 ## Contact
@@ -161,5 +164,5 @@ We will use Slack for all communication. Please enroll in our Slack workspace us
 We *strongly* prefer Slack for all communications. For any further questions/comments, please contact the course organizer(s):
 
 - [Anatole Lefort](https://anatolelefort.net/)
-- [Atsushi Koshiba](https://atsushikoshiba.github.io/)
+- [David Schall](https://dhschall.github.io/)
 - [Prof. Bhatotia](https://dse.in.tum.de/bhatotia/)
