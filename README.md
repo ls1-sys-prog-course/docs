@@ -61,10 +61,10 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
 
 ## Meeting place
 
-- Preliminary meeting: TDB (Zoom)
+- Preliminary meeting: Tues, Feb 11th @ 1:00 PM CET (Zoom)
     - [Slide](./slides/preliminary_meeting.pdf)
-    - [Zoom link](https://tum-conf.zoom-x.de/j/)
-- Q&A session: Weekly on Thursday from 03:00 PM to 04:00 PM CET online (zoom)
+    - [Zoom link](https://tum-conf.zoom-x.de/j/63152167759?pwd=Hs3ZTtXEJZDrWa9Wrq2BCQKpqIBTvm.1)
+- Q&A session: Weekly on Thursday from 03:00 PM to 03:30 PM CET online (zoom)
     - [Zoom link](https://tum-conf.zoom-x.de/j/)
 
 ## Tasks
@@ -144,7 +144,7 @@ Using [this script](https://gist.github.com/HE7086/87025cbcf622898558ba667465871
 ## Communication Medium
 
 We will use the official [Zulip chat](https://zulip.in.tum.de/) server hosted by TUM for all communication.
-<!--
+<!-- Commented out for reference, in case we move back to Slack in the future
 Please enroll in our Slack workspace using your official TUM email address.
 
 - **Slack workspace:** https://ls1-courses-tum.slack.com
