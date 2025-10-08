@@ -1,6 +1,6 @@
-# Practical course: Systems Programming -- SoSe 2025
+# Practical course: Systems Programming -- WiSe 2025-2026
 
-<!-- TODOs for SoSe25
+<!-- TODOs for WiSe26
 
 - Update Zoom Links
 - Update task release schedule
@@ -45,7 +45,7 @@ More specifically, we will cover the following topics through a set of programmi
 - Memory management: How virtual memory, heap, stack, and how malloc() works
 - Networking: How to handle network protocols, efficient ways to implement servers
 - Performance: How to bring out the performance of the hardware (**C++ only**)
-- Compiler/LLVM: Hom to implement LLVM passes to improve compiler-generated codes (**C++ only**)
+- Compiler/LLVM: How to implement LLVM passes to improve compiler-generated codes (**C++ only**)
 
 
 This course consists of a set of modules related to different aspects of systems programming.
@@ -63,9 +63,9 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
 
 - Preliminary meeting: Tues, Feb 11th @ 1:00 PM CET (Zoom)
     - [Slide](./slides/preliminary_meeting.pdf)
-    - [Zoom link](https://tum-conf.zoom-x.de/j/63152167759?pwd=Hs3ZTtXEJZDrWa9Wrq2BCQKpqIBTvm.1)
+    - [Zoom link](https://tum-conf.zoom-x.de/j/67953460706?pwd=XIWf0KcUS4oJMURHATfiFu3FdEQNXr.1)
 - Q&A session: Weekly on Thursday from 03:00 PM to 03:30 PM CET online (zoom)
-    - [Zoom link](https://tum-conf.zoom-x.de/j/65845310662?pwd=O0DprVOlaTl9sBdcLg70PKMdjqOqqQ.1)
+    - [Zoom link](https://tum-conf.zoom-x.de/j/64801329797?pwd=s4mul2WJqTL5ZBNDAnVZN9QHt9jvVO.1)
 
 ## Tasks
 
@@ -74,15 +74,15 @@ The schedule may change. **All deadlines are at 15:00 (CEST).**
 
 | Task                                                                     | Organizer                                               | Published on | Deadline       | Points | Language | Slide                                          | Video                                                                         |
 |--------------------------------------------------------------------------|---------------------------------------------------------|--------------|----------------|--------|----------|------------------------------------------------|-------------------------------------------------------------------------------|
-| [Introduction](https://github.com/ls1-sys-prog-course/task0-sort)        | [Francisco Romão](https://github.com/FranciscoRomao)    | 29.04.2025   | 13.05.2025     | 0      | C/C++, Rust | [link](./slides/00-introduction.pdf)        | [Lecture]( https://youtu.be/Kv8OgLs1crI)                                      |
-| [System Calls](https://github.com/ls1-sys-prog-course/task1-syscalls)    | [Ludovico Capiaghi](https://github.com/ludof63)         | 06.05.2025   | 20.05.2025     | 30     | C/C++, Rust | [link](./slides/01-system_calls.pdf)        | [Lecture](https://youtu.be/qO33G1od3Xo)                                       |
-| [File I/O](https://github.com/ls1-sys-prog-course/task2-fileio)          | [Ludovico Capiaghi](https://github.com/ludof63)         | 13.05.2025   | 27.05.2025     | 30     | C/C++, Rust | [link](./slides/02-files.pdf), [FUSE](./slides/02-fuse.pdf)  | [Lecture](https://youtu.be/wDPH8DYZwCg), [FUSE](https://www.youtube.com/watch?v=i3YJK3es-iQ)                                        |
-| [Processes](https://github.com/ls1-sys-prog-course/task3-processes)      | [Francisco Romão](https://github.com/FranciscoRomao)    | 20.05.2025   | 03.06.2025     | 30     | C/C++, Rust | [link](./slides/03-processes.pdf)           | [Lecture](https://youtu.be/qNzgterdPng)                                       |
-| [Concurrency](https://github.com/ls1-sys-prog-course/task4-concurrency)  | [Francisco Romão](https://github.com/FranciscoRomao)    | 27.05.2025   | 10.06.2025     | 30     | C/C++, Rust | [link](./slides/04-concurrency.pdf)         | [Lecture](https://youtu.be/Bj-1pFh8Bck)                                       |
-| [Memory Management](https://github.com/ls1-sys-prog-course/task5-memory) | [Daniel Lipkin](https://github.com/DanieIL0)            | 03.06.2025   | 17.06.2025     | 30     | C/C++, Rust | [link](./slides/05-memory_management.pdf)   | [Lecture](https://youtu.be/1LxVzohqRx0)                                       |
-| [Networking](https://github.com/ls1-sys-prog-course/task6-sockets)       | [Daniel Lipkin](https://github.com/DanieIL0)            | 10.06.2025   | 24.06.2025     | 30     | C/C++, Rust | [link](./slides/06-network_programming.pdf) | [Lecture](https://youtu.be/fDRaXnhjoDE)                                       |
-| [Performance](https://github.com/ls1-sys-prog-course/task7-performance)  | [Victor Trost](https://github.com/TrostV)               | 17.06.2025   | 01.07.2025     | 40     | C++         | [link](./slides/07-performance.pdf)         | [Lecture](https://youtu.be/o1SkOoCyHDI)                                       |
-| [Compiler/LLVM](https://github.com/ls1-sys-prog-course/task8-llvm)       | [Victor Trost](https://github.com/TrostV)               | 24.06.2025   | 08.07.2025     | 30     | C++         | [link](./slides/08-llvm.pdf)                | [Lecture](https://youtu.be/7SSkksFEKfk)                                       |
+| [Introduction](https://github.com/ls1-sys-prog-course/task0-sort)        | [Tom von Allwörden](https://github.com/karmagiel)       | 20.10.2025   | 03.11.2025     | 0      | C/C++, Rust | [link](./slides/00-introduction.pdf)        | [Lecture]( https://youtu.be/Kv8OgLs1crI)                                      |
+| [System Calls](https://github.com/ls1-sys-prog-course/task1-syscalls)    | [Tom von Allwörden](https://github.com/karmagiel)       | 27.10.2025   | 10.11.2025     | 30     | C/C++, Rust | [link](./slides/01-system_calls.pdf)        | [Lecture](https://youtu.be/qO33G1od3Xo)                                       |
+| [File I/O](https://github.com/ls1-sys-prog-course/task2-fileio)          | [Ludovico Capiaghi](https://github.com/ludof63)         | 03.11.2025   | 17.11.2025     | 30     | C/C++, Rust | [link](./slides/02-files.pdf), [FUSE](./slides/02-fuse.pdf)  | [Lecture](https://youtu.be/wDPH8DYZwCg), [FUSE](https://www.youtube.com/watch?v=i3YJK3es-iQ)                                        |
+| [Processes](https://github.com/ls1-sys-prog-course/task3-processes)      | [Ludovico Capiaghi](https://github.com/ludof63)         | 10.11.2025   | 24.11.2025     | 30     | C/C++, Rust | [link](./slides/03-processes.pdf)           | [Lecture](https://youtu.be/qNzgterdPng)                                       |
+| [Concurrency](https://github.com/ls1-sys-prog-course/task4-concurrency)  | [Maximilian Jäcklein](https://github.com/maxjae)        | 17.11.2025   | 01.12.2025     | 30     | C/C++, Rust | [link](./slides/04-concurrency.pdf)         | [Lecture](https://youtu.be/Bj-1pFh8Bck)                                       |
+| [Memory Management](https://github.com/ls1-sys-prog-course/task5-memory) | [Maximilian Jäcklein](https://github.com/maxjae)        | 24.11.2025   | 08.12.2025     | 30     | C/C++, Rust | [link](./slides/05-memory_management.pdf)   | [Lecture](https://youtu.be/1LxVzohqRx0)                                       |
+| [Networking](https://github.com/ls1-sys-prog-course/task6-sockets)       | [Victor Trost](https://github.com/TrostV)               | 01.12.2025   | 15.12.2025     | 30     | C/C++, Rust | [link](./slides/06-network_programming.pdf) | [Lecture](https://youtu.be/fDRaXnhjoDE)                                       |
+| [Performance](https://github.com/ls1-sys-prog-course/task7-performance)  | [Victor Trost](https://github.com/TrostV)               | 08.12.2025   | 22.12.2025     | 40     | C++         | [link](./slides/07-performance.pdf)         | [Lecture](https://youtu.be/o1SkOoCyHDI)                                       |
+| [Compiler/LLVM](https://github.com/ls1-sys-prog-course/task8-llvm)       | [Tom von Allwörden](https://github.com/karmagiel)       | 15.12.2025   | 29.12.2025     | 30     | C++         | [link](./slides/08-llvm.pdf)                | [Lecture](https://youtu.be/7SSkksFEKfk)                                       |
 
 
 Note that
@@ -148,7 +148,7 @@ We will use the official [Zulip chat](https://zulip.in.tum.de/) server hosted by
 Please enroll in our Slack workspace using your official TUM email address.
 
 - **Slack workspace:** https://ls1-courses-tum.slack.com
-- **Slack channel:** #ws-24-sys-prog
+- **Slack channel:** #ws-26-sys-prog
 -->
 
 ## Other resources
@@ -156,13 +156,14 @@ Please enroll in our Slack workspace using your official TUM email address.
 - [Youtube playlist](https://www.youtube.com/playlist?list=PLfKm1-FQibbB3U8jBJ5-mF3jmH0aCiQ7V)
 - [Bugtracker](https://github.com/ls1-sys-prog-course/docs/issues)
 - [Docker image](https://github.com/orgs/ls1-courses/packages/container/package/ls1-runner)
-- [The previous semester (WiSe24)](https://github.com/ls1-sys-prog-course-archive-WiSe24/docs)
+- [The previous semester (SoSe25)](https://github.com/ls1-sys-prog-course-archive-SoSe25/docs)
   - NOTE: The course material is being kept updated; therefore, the old version has differences.
 
 ## Contact
 
-We *strongly* prefer Slack for all communications. For any further questions/comments, please contact the course organizer(s):
+We *strongly* prefer Zulip for all communications. For any further questions/comments, please contact the course organizer(s):
 
-- [Anatole Lefort](https://anatolelefort.net/)
-- [David Schall](https://dhschall.github.io/)
+- [Theofilos Augoustis](https://taugoust.github.io/)
+- [Patrick Sabanic](https://www.sabanic.de/)
 - [Prof. Bhatotia](https://dse.in.tum.de/bhatotia/)
+
