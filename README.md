@@ -66,6 +66,7 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
     - [Zoom link](https://tum-conf.zoom-x.de/j/67953460706?pwd=XIWf0KcUS4oJMURHATfiFu3FdEQNXr.1)
 - Q&A session: Weekly on Thursday from 03:00 PM to 03:30 PM CET online (zoom)
     - [Zoom link](https://tum-conf.zoom-x.de/j/64801329797?pwd=s4mul2WJqTL5ZBNDAnVZN9QHt9jvVO.1)
+    - Passcode: 718602
 
 ## Tasks
 
