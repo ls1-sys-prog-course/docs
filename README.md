@@ -71,7 +71,7 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
 ## Tasks
 
 Please refer to the respective task repositories (that are released on the published date) for details.
-The schedule may change. **All deadlines are at 15:00 (CEST).**
+The schedule may change. **Tasks are released on the publishing date at 15:00 (CEST)**. **All deadlines are at 15:00 (CEST)**.
 
 | Task                                                                     | Organizer                                               | Published on | Deadline       | Points | Language | Slide                                          | Video                                                                         |
 |--------------------------------------------------------------------------|---------------------------------------------------------|--------------|----------------|--------|----------|------------------------------------------------|-------------------------------------------------------------------------------|
