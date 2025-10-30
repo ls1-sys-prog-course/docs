@@ -109,18 +109,23 @@ For a reference of the standard library, check out:
 
 ## Environment
 
-All executables must run on Linux, x86_64. Therefore, we strongly recommend having a local Linux x86_64 environment for development.
-Note that some tasks involve loading kernel modules and configuring kernel parameters, including cgroups, and some operations are not allowed in some container (docker) environments.
-While we only guarantee the execution of tasks in a local Linux 86_64 environment, if you are using different OSes, you can try to use a virtual machine. More specifically,
+All executables must run on Linux, x86_64. Therefore, we strongly recommend having a local Linux
+x86_64 environment for development. Note that some tasks involve loading kernel modules and
+configuring kernel parameters, including cgroups, and some operations are not allowed in some
+container (docker) environments. While we only guarantee the execution of tasks in a local Linux
+86_64 environment, if you are using different OSes, you can try to use a virtual machine.
+Specifically, we recommend the following approaches:
 
-- Windows: WSL2 would work. Also, Hyper-V, VirtualBox, and VMware are available.
-- Mac: If you use Intel Mac, Docker for Mac would work. If you use Arm mac (M1/M2), then you can try to use [utm](https://mac.getutm.app/) to emulate the entire x86_64 environment, though the overhead of full system emulation is huge, and some tests may not pass. So we recommend preparing other environments.
+- Windows: WSL2 works for many tasks. Also, Hyper-V, VirtualBox, and VMware can be used.
+- Mac: If you use an Intel Mac, Docker for Mac works. If you use Arm mac (M-series), then you can
+  try to use [utm](https://mac.getutm.app/) to emulate the entire x86_64 environment. Note that this
+  incurs major overhead, which may affect your development.
 
-Some tasks are doable in [Github Codespaces](https://github.com/features/codespaces), which are free for students.
-However, some tasks are not doable as they require the kernel's permission.
+In both cases, we recommend accessing the systems provided by the Rechnerhalle, which have been
+tested in the past to work for sysprog tasks.
 
-Each task gives more details information on runnable environments.
-Note that only the test results on CI count toward grading.
+Each task gives more details information on runnable environments. Please note that you will be
+graded only based on the test results in the CI, based on the last commit before the deadline.
 
 ## Grades
 
