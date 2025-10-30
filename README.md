@@ -61,12 +61,13 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
 
 ## Meeting place
 
-- Preliminary meeting: Tues, Feb 11th @ 1:00 PM CET (Zoom)
-    - [Slide](./slides/preliminary_meeting.pdf)
-    - [Zoom link](https://tum-conf.zoom-x.de/j/67953460706?pwd=XIWf0KcUS4oJMURHATfiFu3FdEQNXr.1)
-- Q&A session: Weekly on Thursday from 03:00 PM to 03:30 PM CET online (zoom)
-    - [Zoom link](https://tum-conf.zoom-x.de/j/64801329797?pwd=s4mul2WJqTL5ZBNDAnVZN9QHt9jvVO.1)
-    - Passcode: 718602
+- Preliminary meeting: Tues, Feb 11th @ 13:00 CET (Zoom)
+    - [Slide](./slides/preliminary_meeting.pdf).
+    - [Zoom link](https://tum-conf.zoom-x.de/j/67953460706?pwd=XIWf0KcUS4oJMURHATfiFu3FdEQNXr.1).
+- Q&A session: Weekly on Thursday from 15:00 to 15:30 CET online (zoom)
+    - [Zoom link](https://tum-conf.zoom-x.de/j/64801329797?pwd=s4mul2WJqTL5ZBNDAnVZN9QHt9jvVO.1).
+    - Passcode: 718602.
+    - The meeting starts exactly at 15:00 CET but may finish earlier than 15:30 depending on the demand.
 
 ## Tasks
 
