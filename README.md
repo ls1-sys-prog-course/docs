@@ -44,7 +44,6 @@ More specifically, we will cover the following topics through a set of programmi
 - Processes: Different system calls related to process handling like fork(), execve(), wait()
 - Memory management: How virtual memory, heap, stack, and how malloc() works
 - Networking: How to handle network protocols, efficient ways to implement servers
-- Performance: How to bring out the performance of the hardware (**C++ only**)
 - Compiler/LLVM: How to implement LLVM passes to improve compiler-generated codes (**C++ only**)
 
 
@@ -83,8 +82,7 @@ The schedule may change. **Tasks are released on the publishing date at 15:00 (C
 | [Concurrency]()  | [Maximilian Jäcklein](https://github.com/maxjae)        | 17.11.2025   | 01.12.2025     | 30     | C/C++, Rust | [link](./slides/04-concurrency.pdf)         | [Lecture](https://youtu.be/Bj-1pFh8Bck)                                       |
 | [Memory Management]() | [Maximilian Jäcklein](https://github.com/maxjae)        | 24.11.2025   | 08.12.2025     | 30     | C/C++, Rust | [link](./slides/05-memory_management.pdf)   | [Lecture](https://youtu.be/1LxVzohqRx0)                                       |
 | [Networking]()       | [Victor Trost](https://github.com/TrostV)               | 01.12.2025   | 15.12.2025     | 30     | C/C++, Rust | [link](./slides/06-network_programming.pdf) | [Lecture](https://youtu.be/fDRaXnhjoDE)                                       |
-| [Performance]()  | [Victor Trost](https://github.com/TrostV)               | 08.12.2025   | 22.12.2025     | 40     | C++         | [link](./slides/07-performance.pdf)         | [Lecture](https://youtu.be/o1SkOoCyHDI)                                       |
-| [Compiler/LLVM]()       | [Tom von Allwörden](https://github.com/karmagiel)       | 15.12.2025   | 29.12.2025     | 30     | C++         | [link](./slides/08-llvm.pdf)                | [Lecture](https://youtu.be/7SSkksFEKfk)                                       |
+| [Compiler/LLVM]()  | [Victor Trost](https://github.com/TrostV)               | 08.12.2025   | 22.12.2025     | 30     | C++         | [link](./slides/08-llvm.pdf)         | [Lecture](https://youtu.be/7SSkksFEKfk)                                       |
 
 
 Note that
