@@ -73,6 +73,8 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
 Please refer to the respective task repositories (that are released on the published date) for details.
 The schedule may change. **Tasks are released on the publishing date at 15:00 (CEST)**. **All deadlines are at 15:00 (CEST)**.
 
+<!-- Points column must match points.conf - this is the source of truth for grades.sh -->
+
 | Task                                                                     | Organizer                                               | Published on | Deadline       | Points | Language | Slide                                          | Video                                                                         |
 |--------------------------------------------------------------------------|---------------------------------------------------------|--------------|----------------|--------|----------|------------------------------------------------|-------------------------------------------------------------------------------|
 | [Introduction]()        | [Tom von Allwörden](https://github.com/karmagiel)       | 20.10.2025   | 03.11.2025     | 0      | C/C++, Rust | [link](./slides/00-introduction.pdf)        | [Lecture]( https://youtu.be/Kv8OgLs1crI)                                      |
