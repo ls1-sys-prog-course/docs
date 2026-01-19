@@ -130,23 +130,23 @@ graded only based on the test results in the CI, based on the last commit before
 
 ## Grades
 
-Using [this script](https://gist.github.com/HE7086/87025cbcf622898558ba6674658719e3), grades are computed as follows:
+Grades are computed based on total points (210 max) as follows:
 
-|From| To|Grade|Interval|
-|----|---|-----|-----|
-|  0 |100| 5.0 | 100 |
-|101 |112| 4.7 |     |
-|113 |124| 4.3 |     |
-|125 |148| 4.0 |     |
-|149 |163| 3.7 |     |
-|164 |178| 3.3 |     |
-|179 |193| 3.0 |     |
-|194 |205| 2.7 |  12 |
-|206 |217| 2.3 |     |
-|218 |229| 2.0 |     |
-|230 |238| 1.7 |   9 |
-|239 |245| 1.3 |   7 |
-|246 |250| 1.0 |   5 |
+|From| To|Grade|
+|----|---|-----|
+|  0 | 84| 5.0 |
+| 85 | 94| 4.7 |
+| 95 |104| 4.3 |
+|105 |124| 4.0 |
+|125 |137| 3.7 |
+|138 |149| 3.3 |
+|150 |162| 3.0 |
+|163 |172| 2.7 |
+|173 |182| 2.3 |
+|183 |192| 2.0 |
+|193 |200| 1.7 |
+|201 |206| 1.3 |
+|207 |210| 1.0 |
 
 ## Communication Medium
 
