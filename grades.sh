@@ -15,14 +15,22 @@ NC="\033[0m"
 
 SCRIPT_DIR="$(dirname "$0")"
 POINTS_CONF="$SCRIPT_DIR/points.conf"
+DEADLINES_CONF="$SCRIPT_DIR/deadlines.conf"
 
 get_expected_points() {
     local task="$1"
     grep "^$task " "$POINTS_CONF" 2>/dev/null | awk '{print $2}' || echo "0"
 }
 
+get_deadline() {
+    local task="$1"
+    grep "^$task " "$DEADLINES_CONF" 2>/dev/null | awk '{print $2}' || echo ""
+}
+
 export -f get_expected_points
+export -f get_deadline
 export POINTS_CONF
+export DEADLINES_CONF
 
 AWK_PROG=$(cat <<EOF
 {
@@ -99,13 +107,36 @@ check_task() {
     TASK_KEY="$TASK"
 
     EXPECTED_MAX=$(get_expected_points "$TASK_KEY")
+    DEADLINE=$(get_deadline "$TASK_KEY")
 
-    ERR_OUTPUT=$(gh run list -R "$REPO" --json 'databaseId' -q '.[0].databaseId' 2>&1)
-    if [[ $? -eq 0 && -n "$ERR_OUTPUT" ]]; then
-        SCORE=$(gh run view -R "$REPO" "$ERR_OUTPUT" 2>/dev/null | grep 'Points' | awk '{ print $3 }')
+    if [[ -n "$DEADLINE" ]]; then
+        RUN_DATA=$(gh run list -R "$REPO" --created "<$DEADLINE" --json 'databaseId,headSha' -q '.[0]' 2>&1)
+        RUN_EXIT=$?
     else
-        echo "INFO: $TASK_KEY - Repository not found or no CI runs available" 1>&2
-        [[ "$VERBOSE" == "true" ]] && echo "$ERR_OUTPUT" 1>&2
+        RUN_DATA=$(gh run list -R "$REPO" --json 'databaseId,headSha' -q '.[0]' 2>&1)
+        RUN_EXIT=$?
+    fi
+
+    if [[ $RUN_EXIT -eq 0 && "$RUN_DATA" != "null" && -n "$RUN_DATA" ]]; then
+        RUN_ID=$(echo "$RUN_DATA" | grep -o '"databaseId":[0-9]*' | cut -d: -f2)
+        COMMIT_SHA=$(echo "$RUN_DATA" | grep -o '"headSha":"[^"]*"' | cut -d'"' -f4)
+        SCORE=$(gh run view -R "$REPO" "$RUN_ID" 2>/dev/null | grep 'Points' | awk '{ print $3 }')
+
+        if [[ -n "$COMMIT_SHA" ]]; then
+            echo "INFO: $TASK_KEY - Using commit ${COMMIT_SHA:0:7}" 1>&2
+        fi
+    else
+        if [[ -n "$DEADLINE" ]]; then
+            ANY_RUNS=$(gh run list -R "$REPO" --json 'databaseId' -q '.[0].databaseId' 2>/dev/null)
+            if [[ -n "$ANY_RUNS" ]]; then
+                echo "INFO: $TASK_KEY - No CI runs before deadline (all runs were after the deadline)" 1>&2
+            else
+                echo "INFO: $TASK_KEY - Repository not found or no CI runs available" 1>&2
+            fi
+        else
+            echo "INFO: $TASK_KEY - Repository not found or no CI runs available" 1>&2
+        fi
+        [[ "$VERBOSE" == "true" ]] && echo "$RUN_DATA" 1>&2
         SCORE=""
     fi
 
