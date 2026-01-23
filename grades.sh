@@ -115,11 +115,12 @@ check_task() {
         [[ "$VERBOSE" == "true" ]] && echo "Repository not found in organization $ORG" 1>&2
         SCORE="0/0"
     else
+        # Get runs from main branch only
         if [[ -n "$DEADLINE" ]]; then
-            RUN_DATA=$(gh run list -R "$REPO" --created "<$DEADLINE" --json 'databaseId,headSha' -q '.[0]' 2>&1)
+            RUN_DATA=$(gh run list -R "$REPO" --branch main --created "<$DEADLINE" --json 'databaseId,headSha' -q '.[0]' 2>&1)
             RUN_EXIT=$?
         else
-            RUN_DATA=$(gh run list -R "$REPO" --json 'databaseId,headSha' -q '.[0]' 2>&1)
+            RUN_DATA=$(gh run list -R "$REPO" --branch main --json 'databaseId,headSha' -q '.[0]' 2>&1)
             RUN_EXIT=$?
         fi
 
@@ -133,9 +134,9 @@ check_task() {
             fi
         else
             if [[ -n "$DEADLINE" ]]; then
-                ANY_RUNS=$(gh run list -R "$REPO" --json 'databaseId' -q '.[0].databaseId' 2>/dev/null)
+                ANY_RUNS=$(gh run list -R "$REPO" --branch main --json 'databaseId' -q '.[0].databaseId' 2>/dev/null)
                 if [[ -n "$ANY_RUNS" ]]; then
-                    echo "INFO: $TASK_KEY - No CI runs before deadline (all runs were after the deadline)" 1>&2
+                    echo "INFO: $TASK_KEY - No CI runs before deadline (all runs were after deadline)" 1>&2
                 else
                     echo "INFO: $TASK_KEY - Repository not found or no CI runs available" 1>&2
                 fi
