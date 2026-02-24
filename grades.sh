@@ -55,6 +55,9 @@ EOF
 ORG="ls1-sys-prog-course"
 USERS=()
 VERBOSE=false
+FORMAT="table"
+NAME=""
+MNUM=""
 
 TASKS=()
 while read -r line; do
@@ -166,16 +169,45 @@ check_task() {
 
 
 check_grade() {
-    USER="$1"
-    printf "Checking grades for user %s\n" "$USER" 1>&2
+    local USER="$1"
 
     export -f check_task
-    echo -n "${TASKS[@]}" \
-        | $XARGS -d ' ' -P 10 -I {} bash -c "check_task $ORG \"{}\" $USER" \
-        | sort \
-        | awk "$AWK_PROG" \
-        | (echo -e "${BOLD}TASK SCORE MAX${NC}"; cat) \
-        | column -t -s ' '
+
+    if [[ "$FORMAT" == "csv" ]]; then
+        local TMPFILES=()
+        for task in "${TASKS[@]}"; do
+            local tmpfile
+            tmpfile=$(mktemp "/tmp/${task}.XXXXXX")
+            TMPFILES+=("$tmpfile")
+            bash -c "check_task $ORG \"$task\" $USER" > "$tmpfile" &
+        done
+        wait
+
+        local SUM=0
+        local SCORES=()
+        for tmpfile in "${TMPFILES[@]}"; do
+            local score
+            score=$(awk '{print $2}' "$tmpfile")
+            rm "$tmpfile"
+            [[ -z "$score" ]] && score=0
+            SCORES+=("$score")
+            SUM=$((SUM + score))
+        done
+
+        echo -n "$USER,$NAME,$MNUM"
+        for score in "${SCORES[@]}"; do
+            echo -n ",$score"
+        done
+        echo ",$SUM"
+    else
+        printf "Checking grades for user %s\n" "$USER" 1>&2
+        echo -n "${TASKS[@]}" \
+            | $XARGS -d ' ' -P 10 -I {} bash -c "check_task $ORG \"{}\" $USER" \
+            | sort \
+            | awk "$AWK_PROG" \
+            | (echo -e "${BOLD}TASK SCORE MAX${NC}"; cat) \
+            | column -t -s ' '
+    fi
 }
 
 
@@ -185,8 +217,11 @@ print_help() {
     echo -e "  $0 [flags] [users]"
     echo -e ""
     echo -e "${BOLD}FLAGS${NC}"
-    echo -e "  -h, --help     print this help"
-    echo -e "  -v, --verbose  show detailed error messages"
+    echo -e "  -h, --help              print this help"
+    echo -e "  -v, --verbose           show detailed error messages"
+    echo -e "  -f, --format=FORMAT     output format: table (default) or csv"
+    echo -e "  --name=NAME             student name, included in csv output"
+    echo -e "  --mnum=MNUM             matriculation number, included in csv output"
     echo -e ""
     echo -e "${BOLD}ARGUMENTS${NC}"
     echo -e "  user - list of usernames to be checked"
@@ -205,6 +240,33 @@ while [[ $# -gt 0 ]]; do
         ;;
         -v | --verbose)
             VERBOSE=true
+            shift
+        ;;
+        -f | --format)
+            FORMAT="$2"
+            shift
+            shift
+        ;;
+        -f=* | --format=*)
+            FORMAT="${1#*=}"
+            shift
+        ;;
+        --name)
+            NAME="$2"
+            shift
+            shift
+        ;;
+        --name=*)
+            NAME="${1#*=}"
+            shift
+        ;;
+        --mnum)
+            MNUM="$2"
+            shift
+            shift
+        ;;
+        --mnum=*)
+            MNUM="${1#*=}"
             shift
         ;;
         -o | --org)
