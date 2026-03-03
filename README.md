@@ -1,16 +1,5 @@
 # Practical course: Systems Programming -- WiSe 2025-2026
 
-<!-- TODOs for WiSe26
-
-- Update Zoom Links
-- Update task release schedule
-
-- Set-up github classrom
-- Set-up local runners
-- Invite other chair members
-
--->
-
 ## Chair website
 
 - The practical course is organized by the [Chair of Distributed Systems & Operating Systems](https://dse.in.tum.de/) at TU Munich.
@@ -73,7 +62,7 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
 Please refer to the respective task repositories (that are released on the published date) for details.
 The schedule may change. **Tasks are released on the publishing date at 15:00 (CEST)**. **All deadlines are at 15:00 (CEST)**.
 
-<!-- Points column must match points.conf - this is the source of truth for grades.sh -->
+<!-- Points column must match points.conf - this is the source of truth for grade.sh -->
 
 | Task                                                                     | Organizer                                               | Published on | Deadline       | Points | Language | Slide                                          | Video                                                                         |
 |--------------------------------------------------------------------------|---------------------------------------------------------|--------------|----------------|--------|----------|------------------------------------------------|-------------------------------------------------------------------------------|
