@@ -5,7 +5,7 @@
 # Advanced Systems Programming in C/Rust
 # ========================================
 
-set -e
+set -euo pipefail
 
 RED="\033[31m"
 GREEN="\033[32m"
@@ -13,9 +13,18 @@ YELLOW="\033[33m"
 BOLD="\033[1m"
 NC="\033[0m"
 
-SCRIPT_DIR="$(dirname "$0")"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 POINTS_CONF="$SCRIPT_DIR/points.conf"
 DEADLINES_CONF="$SCRIPT_DIR/deadlines.conf"
+
+if [[ ! -f "$POINTS_CONF" ]]; then
+    echo "ERROR: points.conf not found at $POINTS_CONF" 1>&2
+    exit 1
+fi
+if [[ ! -f "$DEADLINES_CONF" ]]; then
+    echo "ERROR: deadlines.conf not found at $DEADLINES_CONF" 1>&2
+    exit 1
+fi
 
 get_expected_points() {
     local task="$1"
@@ -58,11 +67,12 @@ VERBOSE=false
 FORMAT="table"
 NAME=""
 MNUM=""
+IGNORE_MAX=false
 
 TASKS=()
 while read -r line; do
     [[ -z "$line" || "$line" =~ ^#.* ]] && continue
-    task=$(echo "$line" | awk '{print $1}')
+    task="${line%% *}"
     TASKS+=("$task")
 done < "$POINTS_CONF"
 
@@ -74,11 +84,7 @@ check_command() {
         exit 1
     fi
 
-    if ! gh auth status 2> /dev/null; then
-        echo "github-cli is not configured!"
-        echo "Run 'gh auth login' first."
-        exit 1
-    fi
+    [[ "$FORMAT" == "csv" ]] && return 0
 
     if [[ $(uname) = "Darwin" ]]; then
         if command -v xargs > /dev/null && xargs --version 2>&1 | grep -q GNU; then
@@ -101,6 +107,51 @@ check_command() {
 }
 
 
+gh_retry() {
+    local suppress_errors=false
+    if [[ "${1:-}" == "--suppress-errors" ]]; then
+        suppress_errors=true
+        shift
+    fi
+
+    local max_retries=2
+    local retry_delay=10
+    local stderr_file
+    stderr_file=$(mktemp)
+    local ret=0
+
+    for ((i=0; i<=max_retries; i++)); do
+        if gh "$@" 2>"$stderr_file"; then
+            rm -f "$stderr_file"
+            return 0
+        fi
+        ret=$?
+        if grep -qi "rate limit\|secondary rate\|abuse" "$stderr_file"; then
+            if [[ $i -lt $max_retries ]]; then
+                echo "Rate limited, retrying in ${retry_delay}s (attempt $((i+1))/$max_retries)..." 1>&2
+                sleep $retry_delay
+                retry_delay=$((retry_delay * 2))
+            else
+                cat "$stderr_file" 1>&2  # always show rate-limit exhaustion
+                rm -f "$stderr_file"
+                return 2
+            fi
+        else
+            [[ "$suppress_errors" == false ]] && cat "$stderr_file" 1>&2
+            rm -f "$stderr_file"
+            return $ret
+        fi
+    done
+}
+export -f gh_retry
+
+
+log_info() {
+    [[ "${FORMAT:-table}" != "csv" ]] && echo "$@" 1>&2 || true
+}
+export -f log_info
+
+
 check_task() {
     local ORG="$1"
     local TASK="$2"
@@ -112,43 +163,45 @@ check_task() {
     EXPECTED_MAX=$(get_expected_points "$TASK_KEY")
     DEADLINE=$(get_deadline "$TASK_KEY")
 
-    REPO_CHECK=$(gh api "repos/$REPO" --jq '.owner.login' 2>/dev/null)
-    if [[ "$REPO_CHECK" != "$ORG" ]]; then
-        echo "INFO: $TASK_KEY - Repository not found or no CI runs available" 1>&2
-        [[ "$VERBOSE" == "true" ]] && echo "Repository not found in organization $ORG" 1>&2
-        SCORE="0/0"
+    # Skip API entirely for zero-point tasks unless --ignore-max is set
+    if [[ "$EXPECTED_MAX" -eq 0 && "$IGNORE_MAX" != "true" ]]; then
+        printf "%s %s %s\n" "$TASK-$USER" "0" "0"
+        return 0
+    fi
+
+    # Get runs from main branch only
+    if [[ -n "$DEADLINE" ]]; then
+        RUN_INFO=$(gh_retry --suppress-errors run list -R "$REPO" --branch main --status=completed --limit 1 --created "<$DEADLINE" --json 'databaseId,headSha' --jq 'if length > 0 then "\(.[0].databaseId) \(.[0].headSha)" else empty end') && RUN_EXIT=0 || RUN_EXIT=$?
     else
-        # Get runs from main branch only
+        RUN_INFO=$(gh_retry --suppress-errors run list -R "$REPO" --branch main --status=completed --limit 1 --json 'databaseId,headSha' --jq 'if length > 0 then "\(.[0].databaseId) \(.[0].headSha)" else empty end') && RUN_EXIT=0 || RUN_EXIT=$?
+    fi
+    [[ $RUN_EXIT -eq 2 ]] && exit 2
+
+    if [[ $RUN_EXIT -eq 0 && -n "$RUN_INFO" ]]; then
+        RUN_ID="${RUN_INFO%% *}"
+        COMMIT_SHA="${RUN_INFO#* }"
+        { SCORE=$(gh_retry run view -R "$REPO" "$RUN_ID" --json jobs \
+            --jq '[.jobs[].steps[].name | match("Points ([0-9]+)/([0-9]+)") | .captures | {score: .[0].string, max: .[1].string}] | first | "\(.score)/\(.max)"'); } \
+            && RV_EXIT=0 || RV_EXIT=$?
+        [[ $RV_EXIT -eq 2 ]] && exit 2
+
+        if [[ -n "$COMMIT_SHA" ]]; then
+            log_info "INFO: $TASK_KEY - Using commit ${COMMIT_SHA:0:7}"
+        fi
+    else
         if [[ -n "$DEADLINE" ]]; then
-            RUN_DATA=$(gh run list -R "$REPO" --branch main --created "<$DEADLINE" --json 'databaseId,headSha' -q '.[0]' 2>&1)
-            RUN_EXIT=$?
-        else
-            RUN_DATA=$(gh run list -R "$REPO" --branch main --json 'databaseId,headSha' -q '.[0]' 2>&1)
-            RUN_EXIT=$?
-        fi
-
-        if [[ $RUN_EXIT -eq 0 && "$RUN_DATA" != "null" && -n "$RUN_DATA" ]]; then
-            RUN_ID=$(echo "$RUN_DATA" | grep -o '"databaseId":[0-9]*' | cut -d: -f2)
-            COMMIT_SHA=$(echo "$RUN_DATA" | grep -o '"headSha":"[^"]*"' | cut -d'"' -f4)
-            SCORE=$(gh run view -R "$REPO" "$RUN_ID" 2>/dev/null | grep 'Points' | awk '{ print $3 }')
-
-            if [[ -n "$COMMIT_SHA" ]]; then
-                echo "INFO: $TASK_KEY - Using commit ${COMMIT_SHA:0:7}" 1>&2
-            fi
-        else
-            if [[ -n "$DEADLINE" ]]; then
-                ANY_RUNS=$(gh run list -R "$REPO" --branch main --json 'databaseId' -q '.[0].databaseId' 2>/dev/null)
-                if [[ -n "$ANY_RUNS" ]]; then
-                    echo "INFO: $TASK_KEY - No CI runs before deadline (all runs were after deadline)" 1>&2
-                else
-                    echo "INFO: $TASK_KEY - Repository not found or no CI runs available" 1>&2
-                fi
+            ANY_RUNS_EXIT=0
+            ANY_RUNS=$(gh_retry --suppress-errors run list -R "$REPO" --branch main --limit 1 --json 'databaseId' -q '.[0].databaseId') || ANY_RUNS_EXIT=$?
+            [[ $ANY_RUNS_EXIT -eq 2 ]] && exit 2
+            if [[ -n "$ANY_RUNS" ]]; then
+                log_info "INFO: $TASK_KEY - No CI runs before deadline (all runs were after deadline)"
             else
-                echo "INFO: $TASK_KEY - Repository not found or no CI runs available" 1>&2
+                log_info "INFO: $TASK_KEY - Repository not found or no CI runs available"
             fi
-            [[ "$VERBOSE" == "true" && -n "$RUN_DATA" ]] && echo "$RUN_DATA" 1>&2
-            SCORE=""
+        else
+            log_info "INFO: $TASK_KEY - Repository not found or no CI runs available"
         fi
+        SCORE=""
     fi
 
     [[ -z "$SCORE" ]] && SCORE="0/0"
@@ -157,10 +210,15 @@ check_task() {
     SCORE=${SCORE%/*}
 
     if [[ "$DISCOVERED_MAX" != "0" && "$DISCOVERED_MAX" != "$EXPECTED_MAX" ]]; then
-        echo "WARNING: $TASK_KEY discovered max points ($DISCOVERED_MAX) differs from expected ($EXPECTED_MAX)" 1>&2
+        log_info "WARNING: $TASK_KEY discovered max points ($DISCOVERED_MAX) differs from expected ($EXPECTED_MAX)"
     fi
 
-    if [[ "$SCORE" -gt "$EXPECTED_MAX" ]]; then
+    if ! [[ "$SCORE" =~ ^[0-9]+$ ]]; then
+        log_info "WARNING: $TASK_KEY - unexpected score format ('$SCORE'), defaulting to 0"
+        SCORE=0
+    fi
+
+    if [[ "$IGNORE_MAX" != "true" && "$SCORE" -gt "$EXPECTED_MAX" ]]; then
         SCORE="$EXPECTED_MAX"
     fi
 
@@ -179,9 +237,9 @@ check_grade() {
             local tmpfile
             tmpfile=$(mktemp "/tmp/${task}.XXXXXX")
             TMPFILES+=("$tmpfile")
-            bash -c "check_task $ORG \"$task\" $USER" > "$tmpfile" &
+            bash -euo pipefail -c 'check_task "$1" "$2" "$3"' _ "$ORG" "$task" "$USER" > "$tmpfile" \
+                || { ec=$?; for f in "${TMPFILES[@]}"; do rm -f "$f"; done; exit $ec; }
         done
-        wait
 
         local SUM=0
         local SCORES=()
@@ -194,15 +252,15 @@ check_grade() {
             SUM=$((SUM + score))
         done
 
-        echo -n "$USER,$NAME,$MNUM"
+        local LINE="$USER,$NAME,$MNUM"
         for score in "${SCORES[@]}"; do
-            echo -n ",$score"
+            LINE="$LINE,$score"
         done
-        echo ",$SUM"
+        printf "%s\n" "$LINE,$SUM"
     else
         printf "Checking grades for user %s\n" "$USER" 1>&2
-        echo -n "${TASKS[@]}" \
-            | $XARGS -d ' ' -P 10 -I {} bash -c "check_task $ORG \"{}\" $USER" \
+        printf '%s\n' "${TASKS[@]}" \
+            | $XARGS -P 10 -I {} bash -euo pipefail -c 'check_task "$1" "$2" "$3"' _ "$ORG" "{}" "$USER" \
             | sort \
             | awk "$AWK_PROG" \
             | (echo -e "${BOLD}TASK SCORE MAX${NC}"; cat) \
@@ -222,6 +280,8 @@ print_help() {
     echo -e "  -f, --format=FORMAT     output format: table (default) or csv"
     echo -e "  --name=NAME             student name, included in csv output"
     echo -e "  --mnum=MNUM             matriculation number, included in csv output"
+    echo -e "  --ignore-max            show real scores even for 0-point tasks; do not"
+    echo -e "                          cap scores that exceed the configured maximum"
     echo -e ""
     echo -e "${BOLD}ARGUMENTS${NC}"
     echo -e "  user - list of usernames to be checked"
@@ -269,6 +329,10 @@ while [[ $# -gt 0 ]]; do
             MNUM="${1#*=}"
             shift
         ;;
+        --ignore-max)
+            IGNORE_MAX=true
+            shift
+        ;;
         -o | --org)
             ORG="$2"
             shift
@@ -278,6 +342,10 @@ while [[ $# -gt 0 ]]; do
             ORG="${1#*=}"
             shift
         ;;
+        -*)
+            echo "ERROR: unknown flag '$1'" 1>&2
+            exit 1
+        ;;
         *)
             USERS+=("$1")
             shift
@@ -285,11 +353,20 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
+if [[ "$FORMAT" != "table" && "$FORMAT" != "csv" ]]; then
+    echo "ERROR: unknown format '$FORMAT'; must be 'table' or 'csv'" 1>&2
+    exit 1
+fi
+
 check_command
 
 export VERBOSE
+export FORMAT
+export IGNORE_MAX
 
-[[ ${#USERS[@]} -eq 0 ]] && USERS=("$(gh api /user -q '.login')")
+if [[ ${#USERS[@]} -eq 0 ]]; then
+    USERS=("$(gh api /user -q '.login')")
+fi
 
 for user in "${USERS[@]}"; do
     check_grade "$user"
