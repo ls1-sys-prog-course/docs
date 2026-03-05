@@ -14,32 +14,42 @@ BOLD="\033[1m"
 NC="\033[0m"
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-POINTS_CONF="$SCRIPT_DIR/points.conf"
-DEADLINES_CONF="$SCRIPT_DIR/deadlines.conf"
 
-if [[ ! -f "$POINTS_CONF" ]]; then
-    echo "ERROR: points.conf not found at $POINTS_CONF" 1>&2
-    exit 1
-fi
-if [[ ! -f "$DEADLINES_CONF" ]]; then
-    echo "ERROR: deadlines.conf not found at $DEADLINES_CONF" 1>&2
-    exit 1
-fi
+# get_expected_points and get_deadline encode task configuration inline so they
+# remain self-contained when exported to xargs subshells (export -f).
 
+# Task max points
 get_expected_points() {
-    local task="$1"
-    grep "^$task " "$POINTS_CONF" 2>/dev/null | awk '{print $2}' || echo "0"
+    case "$1" in
+        task0-sort)        echo 0  ;;
+        task1-syscalls)    echo 30 ;;
+        task2-fileio)      echo 30 ;;
+        task3-processes)   echo 30 ;;
+        task4-concurrency) echo 30 ;;
+        task5-memory)      echo 30 ;;
+        task6-sockets)     echo 30 ;;
+        task7-performance) echo 0  ;;
+        task8-llvm)        echo 30 ;;
+        *)                 echo 0  ;;
+    esac
 }
 
+# Task deadlines (ISO 8601); no output means no deadline
 get_deadline() {
-    local task="$1"
-    grep "^$task " "$DEADLINES_CONF" 2>/dev/null | awk '{print $2}' || echo ""
+    case "$1" in
+        task0-sort)        echo "2025-11-03T15:00:00+01:00" ;;
+        task1-syscalls)    echo "2025-11-10T15:00:00+01:00" ;;
+        task2-fileio)      echo "2025-11-17T15:00:00+01:00" ;;
+        task3-processes)   echo "2025-11-24T15:00:00+01:00" ;;
+        task4-concurrency) echo "2025-12-01T15:00:00+01:00" ;;
+        task5-memory)      echo "2025-12-08T15:00:00+01:00" ;;
+        task6-sockets)     echo "2025-12-15T15:00:00+01:00" ;;
+        task8-llvm)        echo "2025-12-22T15:00:00+01:00" ;;
+    esac
 }
 
 export -f get_expected_points
 export -f get_deadline
-export POINTS_CONF
-export DEADLINES_CONF
 
 AWK_PROG=$(cat <<EOF
 {
@@ -69,12 +79,17 @@ NAME=""
 MNUM=""
 IGNORE_MAX=false
 
-TASKS=()
-while read -r line; do
-    [[ -z "$line" || "$line" =~ ^#.* ]] && continue
-    task="${line%% *}"
-    TASKS+=("$task")
-done < "$POINTS_CONF"
+TASKS=(
+    task0-sort
+    task1-syscalls
+    task2-fileio
+    task3-processes
+    task4-concurrency
+    task5-memory
+    task6-sockets
+    task7-performance
+    task8-llvm
+)
 
 
 check_command() {
@@ -116,29 +131,25 @@ gh_retry() {
 
     local max_retries=2
     local retry_delay=10
-    local stderr_file
-    stderr_file=$(mktemp)
     local ret=0
 
     for ((i=0; i<=max_retries; i++)); do
-        if gh "$@" 2>"$stderr_file"; then
-            rm -f "$stderr_file"
-            return 0
+        if [[ "$suppress_errors" == true ]]; then
+            gh "$@" 2>/dev/null && return 0 || ret=$?
+        else
+            gh "$@" && return 0 || ret=$?
         fi
-        ret=$?
-        if grep -qi "rate limit\|secondary rate\|abuse" "$stderr_file"; then
+
+        if gh api rate_limit --jq '.resources.core.remaining == 0' 2>/dev/null | grep -q true; then
             if [[ $i -lt $max_retries ]]; then
                 echo "Rate limited, retrying in ${retry_delay}s (attempt $((i+1))/$max_retries)..." 1>&2
                 sleep $retry_delay
                 retry_delay=$((retry_delay * 2))
             else
-                cat "$stderr_file" 1>&2  # always show rate-limit exhaustion
-                rm -f "$stderr_file"
+                echo "ERROR: API rate limit exhausted, stopping." 1>&2
                 return 2
             fi
         else
-            [[ "$suppress_errors" == false ]] && cat "$stderr_file" 1>&2
-            rm -f "$stderr_file"
             return $ret
         fi
     done
@@ -171,17 +182,17 @@ check_task() {
 
     # Get runs from main branch only
     if [[ -n "$DEADLINE" ]]; then
-        RUN_INFO=$(gh_retry --suppress-errors run list -R "$REPO" --branch main --status=completed --limit 1 --created "<$DEADLINE" --json 'databaseId,headSha' --jq 'if length > 0 then "\(.[0].databaseId) \(.[0].headSha)" else empty end') && RUN_EXIT=0 || RUN_EXIT=$?
+        RUN_INFO=$(gh_retry --suppress-errors run list -R "$REPO" --branch main --status=completed --limit 20 --created "<$DEADLINE" --json 'databaseId,headSha,conclusion' --jq 'map(select(.conclusion != "cancelled")) | if length > 0 then "\(.[0].databaseId) \(.[0].headSha)" else empty end') && RUN_EXIT=0 || RUN_EXIT=$?
     else
-        RUN_INFO=$(gh_retry --suppress-errors run list -R "$REPO" --branch main --status=completed --limit 1 --json 'databaseId,headSha' --jq 'if length > 0 then "\(.[0].databaseId) \(.[0].headSha)" else empty end') && RUN_EXIT=0 || RUN_EXIT=$?
+        RUN_INFO=$(gh_retry --suppress-errors run list -R "$REPO" --branch main --status=completed --limit 20 --json 'databaseId,headSha,conclusion' --jq 'map(select(.conclusion != "cancelled")) | if length > 0 then "\(.[0].databaseId) \(.[0].headSha)" else empty end') && RUN_EXIT=0 || RUN_EXIT=$?
     fi
     [[ $RUN_EXIT -eq 2 ]] && exit 2
 
     if [[ $RUN_EXIT -eq 0 && -n "$RUN_INFO" ]]; then
         RUN_ID="${RUN_INFO%% *}"
         COMMIT_SHA="${RUN_INFO#* }"
-        { SCORE=$(gh_retry run view -R "$REPO" "$RUN_ID" --json jobs \
-            --jq '[.jobs[].steps[].name | match("Points ([0-9]+)/([0-9]+)") | .captures | {score: .[0].string, max: .[1].string}] | first | "\(.score)/\(.max)"'); } \
+        { SCORE=$(gh_retry api "/repos/$REPO/commits/$COMMIT_SHA/check-runs" \
+            --jq '[.check_runs[].output.summary | select(length > 0) | match("Points ([0-9]+)/([0-9]+)") | .captures | {score: .[0].string, max: .[1].string}] | first | "\(.score)/\(.max)"'); } \
             && RV_EXIT=0 || RV_EXIT=$?
         [[ $RV_EXIT -eq 2 ]] && exit 2
 
@@ -229,24 +240,15 @@ check_task() {
 check_grade() {
     local USER="$1"
 
-    export -f check_task
-
     if [[ "$FORMAT" == "csv" ]]; then
-        local TMPFILES=()
-        for task in "${TASKS[@]}"; do
-            local tmpfile
-            tmpfile=$(mktemp "/tmp/${task}.XXXXXX")
-            TMPFILES+=("$tmpfile")
-            bash -euo pipefail -c 'check_task "$1" "$2" "$3"' _ "$ORG" "$task" "$USER" > "$tmpfile" \
-                || { ec=$?; for f in "${TMPFILES[@]}"; do rm -f "$f"; done; exit $ec; }
-        done
-
         local SUM=0
         local SCORES=()
-        for tmpfile in "${TMPFILES[@]}"; do
-            local score
-            score=$(awk '{print $2}' "$tmpfile")
-            rm "$tmpfile"
+        for task in "${TASKS[@]}"; do
+            local score ec=0
+            local out
+            out=$(check_task "$ORG" "$task" "$USER") || ec=$?
+            [[ $ec -ne 0 ]] && exit $ec
+            score=$(awk '{print $2}' <<< "$out")
             [[ -z "$score" ]] && score=0
             SCORES+=("$score")
             SUM=$((SUM + score))
@@ -282,6 +284,7 @@ print_help() {
     echo -e "  --mnum=MNUM             matriculation number, included in csv output"
     echo -e "  --ignore-max            show real scores even for 0-point tasks; do not"
     echo -e "                          cap scores that exceed the configured maximum"
+    echo -e "  --list-tasks            print the list of tasks (one per line) and exit"
     echo -e ""
     echo -e "${BOLD}ARGUMENTS${NC}"
     echo -e "  user - list of usernames to be checked"
@@ -296,6 +299,10 @@ while [[ $# -gt 0 ]]; do
     case $1 in
         -h | --help)
             print_help
+            exit
+        ;;
+        --list-tasks)
+            printf '%s\n' "${TASKS[@]}"
             exit
         ;;
         -v | --verbose)
