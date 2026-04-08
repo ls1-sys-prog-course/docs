@@ -1,4 +1,4 @@
-# Practical course: Systems Programming -- WiSe 2025-2026
+# Practical course: Systems Programming -- SoSe 2025-2026
 
 ## Chair website
 
@@ -52,10 +52,9 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
 - Preliminary meeting: Tues, Feb 11th @ 13:00 CET (Zoom)
     - [Slide](./slides/preliminary_meeting.pdf).
     - [Zoom link](https://tum-conf.zoom-x.de/j/67953460706?pwd=XIWf0KcUS4oJMURHATfiFu3FdEQNXr.1).
-- Q&A session: Weekly on Thursday from 15:00 to 15:30 CET online (zoom)
-    - [Zoom link](https://tum-conf.zoom-x.de/j/64801329797?pwd=s4mul2WJqTL5ZBNDAnVZN9QHt9jvVO.1).
-    - Passcode: 718602.
-    - The meeting starts exactly at 15:00 CET but may finish earlier than 15:30 depending on the demand.
+- Q&A session: Weekly on Thursday from 15:00 to 15:30 CEST online (zoom)
+    - [Meet link](https://meet.google.com/wah-ctay-ggy).
+    - The meeting starts exactly at 15:00 CEST but may finish earlier than 15:30 depending on the demand.
 
 ## Tasks
 
@@ -66,14 +65,14 @@ The schedule may change. **Tasks are released on the publishing date at 15:00 (C
 
 | Task                                                                     | Organizer                                               | Published on | Deadline       | Points | Language | Slide                                          | Video                                                                         |
 |--------------------------------------------------------------------------|---------------------------------------------------------|--------------|----------------|--------|----------|------------------------------------------------|-------------------------------------------------------------------------------|
-| [Introduction]()        | [Tom von Allwörden](https://github.com/karmagiel)       | 20.10.2025   | 03.11.2025     | 0      | C/C++, Rust | [link](./slides/00-introduction.pdf)        | [Lecture]( https://youtu.be/Kv8OgLs1crI)                                      |
-| [System Calls]()    | [Tom von Allwörden](https://github.com/karmagiel)       | 27.10.2025   | 10.11.2025     | 30     | C/C++, Rust | [link](./slides/01-system_calls.pdf)        | [Lecture](https://youtu.be/qO33G1od3Xo)                                       |
-| [File I/O]()          | [Ludovico Capiaghi](https://github.com/ludof63)         | 03.11.2025   | 17.11.2025     | 30     | C/C++, Rust | [link](./slides/02-files.pdf), [FUSE](./slides/02-fuse.pdf)  | [Lecture](https://youtu.be/wDPH8DYZwCg), [FUSE](https://www.youtube.com/watch?v=i3YJK3es-iQ)                                        |
-| [Processes]()      | [Ludovico Capiaghi](https://github.com/ludof63)         | 10.11.2025   | 24.11.2025     | 30     | C/C++, Rust | [link](./slides/03-processes.pdf)           | [Lecture](https://youtu.be/qNzgterdPng)                                       |
-| [Concurrency]()  | [Maximilian Jäcklein](https://github.com/maxjae)        | 17.11.2025   | 01.12.2025     | 30     | C/C++, Rust | [link](./slides/04-concurrency.pdf)         | [Lecture](https://youtu.be/Bj-1pFh8Bck)                                       |
-| [Memory Management]() | [Maximilian Jäcklein](https://github.com/maxjae)        | 24.11.2025   | 08.12.2025     | 30     | C/C++, Rust | [link](./slides/05-memory_management.pdf)   | [Lecture](https://youtu.be/1LxVzohqRx0)                                       |
-| [Networking]()       | [Victor Trost](https://github.com/TrostV)               | 01.12.2025   | 15.12.2025     | 30     | C/C++, Rust | [link](./slides/06-network_programming.pdf) | [Lecture](https://youtu.be/fDRaXnhjoDE)                                       |
-| [Compiler/LLVM]()  | [Victor Trost](https://github.com/TrostV)               | 08.12.2025   | 22.12.2025     | 30     | C++         | [link](./slides/08-llvm.pdf)         | [Lecture](https://youtu.be/7SSkksFEKfk)                                       |
+| [Introduction]()        | [Maximilian Jäcklein](https://github.com/karmagiel)       | 13.04.2026   | 20.04.2026     | 0      | C/C++, Rust | [link](./slides/00-introduction.pdf)        | [Lecture]( https://youtu.be/Kv8OgLs1crI)                                      |
+| [System Calls]()    | [Christian Krinitsin](https://github.com/karmagiel)       | 20.04.2026   | 27.04.2026     | 30     | C/C++, Rust | [link](./slides/01-system_calls.pdf)        | [Lecture](https://youtu.be/qO33G1od3Xo)                                       |
+| [File I/O]()          | [Christian Krinitsin](https://github.com/ludof63)         | 27.04.2026   | 11.05.2026     | 30     | C/C++, Rust | [link](./slides/02-files.pdf), [FUSE](./slides/02-fuse.pdf)  | [Lecture](https://youtu.be/wDPH8DYZwCg), [FUSE](https://www.youtube.com/watch?v=i3YJK3es-iQ)                                        |
+| [Processes]()      | [Christian Krinitsin](https://github.com/ludof63)         | 11.05.2026   |25.05.2026     | 30     | C/C++, Rust | [link](./slides/03-processes.pdf)           | [Lecture](https://youtu.be/qNzgterdPng)                                       |
+| [Concurrency]()  | [Maximilian Jäcklein](https://github.com/maxjae)        | 25.05.2026   | 08.06.2026     | 30     | C/C++, Rust | [link](./slides/04-concurrency.pdf)         | [Lecture](https://youtu.be/Bj-1pFh8Bck)                                       |
+| [Memory Management]() | [Maximilian Jäcklein](https://github.com/maxjae)        | 08.06.2026   | 22.06.2026     | 30     | C/C++, Rust | [link](./slides/05-memory_management.pdf)   | [Lecture](https://youtu.be/1LxVzohqRx0)                                       |
+| [Networking]()       | [Victor Trost](https://github.com/TrostV)               | 22.06.2026   | 06.07.2026     | 30     | C/C++, Rust | [link](./slides/06-network_programming.pdf) | [Lecture](https://youtu.be/fDRaXnhjoDE)                                       |
+| [Compiler/LLVM]()  | [Victor Trost](https://github.com/TrostV)               | 06.07.2026   | 20.07.2026     | 30     | C++         | [link](./slides/07-llvm.pdf)         | [Lecture](https://youtu.be/7SSkksFEKfk)                                       |
 
 
 Note that
@@ -139,20 +138,14 @@ Grades are computed based on total points (210 max) as follows:
 
 ## Communication Medium
 
-We will use the official [Zulip chat](https://zulip.in.tum.de/) server hosted by TUM for all communication.
-<!-- Commented out for reference, in case we move back to Slack in the future
-Please enroll in our Slack workspace using your official TUM email address.
-
-- **Slack workspace:** https://ls1-courses-tum.slack.com
-- **Slack channel:** #ws-26-sys-prog
--->
+We will use the official [Zulip chat](https://zulip.cit.tum.de/#narrow/channel/3511-SysProg---General) server hosted by TUM for all communication.
 
 ## Other resources
 
 - [Youtube playlist](https://www.youtube.com/playlist?list=PLfKm1-FQibbB3U8jBJ5-mF3jmH0aCiQ7V)
 - [Bugtracker](https://github.com/ls1-sys-prog-course/docs/issues)
 - [Docker image](https://github.com/orgs/ls1-courses/packages/container/package/ls1-runner)
-- [The previous semester (SoSe25)](https://github.com/ls1-sys-prog-course-archive-SoSe25/docs)
+- [The previous semester (WiSe25)](https://github.com/ls1-sys-prog-course-archive-WiSe25/docs)
   - NOTE: The course material is being kept updated; therefore, the old version has differences.
 
 ## Contact
@@ -160,6 +153,6 @@ Please enroll in our Slack workspace using your official TUM email address.
 We *strongly* prefer Zulip for all communications. For any further questions/comments, please contact the course organizer(s):
 
 - [Theofilos Augoustis](https://taugoust.github.io/)
-- [Patrick Sabanic](https://www.sabanic.de/)
+- [Anubhav Panda](https://anubhavpanda.in/)
 - [Prof. Bhatotia](https://dse.in.tum.de/bhatotia/)
 
