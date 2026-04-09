@@ -72,7 +72,7 @@ The schedule may change. **Tasks are released on the publishing date at 15:00 (C
 | [Concurrency]()  | [Maximilian Jäcklein](https://github.com/maxjae)        | 25.05.2026   | 08.06.2026     | 30     | C/C++, Rust | [link](./slides/04-concurrency.pdf)         | [Lecture](https://youtu.be/Bj-1pFh8Bck)                                       |
 | [Memory Management]() | [Maximilian Jäcklein](https://github.com/maxjae)        | 08.06.2026   | 22.06.2026     | 30     | C/C++, Rust | [link](./slides/05-memory_management.pdf)   | [Lecture](https://youtu.be/1LxVzohqRx0)                                       |
 | [Networking]()       | [Victor Trost](https://github.com/TrostV)               | 22.06.2026   | 06.07.2026     | 30     | C/C++, Rust | [link](./slides/06-network_programming.pdf) | [Lecture](https://youtu.be/fDRaXnhjoDE)                                       |
-| [Compiler/LLVM]()  | [Victor Trost](https://github.com/TrostV)               | 06.07.2026   | 20.07.2026     | 30     | C++         | [link](./slides/08-llvm.pdf)         | [Lecture](https://youtu.be/7SSkksFEKfk)                                       |
+| [Compiler/LLVM]()  | [Victor Trost](https://github.com/TrostV)               | 06.07.2026   | 20.07.2026     | 30     | C++         | [link](./slides/07-llvm.pdf)         | [Lecture](https://youtu.be/7SSkksFEKfk)                                       |
 
 
 Note that
