@@ -65,14 +65,14 @@ The schedule may change. **Tasks are released on the publishing date at 15:00 (C
 
 | Task                                                                     | Organizer                                               | Published on | Deadline       | Points | Language | Slide                                          | Video                                                                         |
 |--------------------------------------------------------------------------|---------------------------------------------------------|--------------|----------------|--------|----------|------------------------------------------------|-------------------------------------------------------------------------------|
-| [Introduction]         | [Maximilian Jäcklein](https://github.com/karmagiel)       | 13.04.2026   | 20.04.2026     | 0      | C/C++, Rust | [link](./slides/00-introduction.pdf)        | [Lecture]()                                      |
-| [System Calls]    | [Christian Krinitsin](https://github.com/karmagiel)       | 20.04.2026   | 27.04.2026     | 30     | C/C++, Rust | [link](./slides/01-system_calls.pdf)        | [Lecture]()                                       |
-| [File I/O]          | [Christian Krinitsin](https://github.com/ludof63)         | 27.04.2026   | 11.05.2026     | 30     | C/C++, Rust | [link](./slides/02-files.pdf), [FUSE]()  | [Lecture](), [FUSE]()                                        |
-| [Processes]      | [Christian Krinitsin](https://github.com/ludof63)         | 11.05.2026   |25.05.2026     | 30     | C/C++, Rust | [link](./slides/03-processes.pdf)           | [Lecture]()                                       |
-| [Concurrency]  | [Maximilian Jäcklein](https://github.com/maxjae)        | 25.05.2026   | 08.06.2026     | 30     | C/C++, Rust | [link](./slides/04-concurrency.pdf)         | [Lecture]()                                       |
-| [Memory Management] | [Maximilian Jäcklein](https://github.com/maxjae)        | 08.06.2026   | 22.06.2026     | 30     | C/C++, Rust | [link](./slides/05-memory_management.pdf)   | [Lecture]()                                       |
-| [Networking]       | [Victor Trost](https://github.com/TrostV)               | 22.06.2026   | 06.07.2026     | 30     | C/C++, Rust | [link](./slides/06-network_programming.pdf) | [Lecture]()                                       |
-| [Compiler/LLVM]  | [Victor Trost](https://github.com/TrostV)               | 06.07.2026   | 20.07.2026     | 30     | C++         | [link](./slides/07-llvm.pdf)         | [Lecture]()                                       |
+| Introduction         | [Maximilian Jäcklein](https://github.com/karmagiel)       | 13.04.2026   | 20.04.2026     | 0      | C/C++, Rust | [Link](./slides/00-introduction.pdf)        |                                       |
+| System Calls    | [Christian Krinitsin](https://github.com/karmagiel)       | 20.04.2026   | 27.04.2026     | 30     | C/C++, Rust | [Link](./slides/01-system_calls.pdf)        | Lecture                                       |
+| File I/O          | [Christian Krinitsin](https://github.com/ludof63)         | 27.04.2026   | 11.05.2026     | 30     | C/C++, Rust | [Link](./slides/02-files.pdf), [FUSE](./slides/02-fuse.pdf)  | Lecture, FUSE()                                        |
+| Processes      | [Christian Krinitsin](https://github.com/ludof63)         | 11.05.2026   |25.05.2026     | 30     | C/C++, Rust | [link](./slides/03-processes.pdf)           | Lecture                                       |
+| Concurrency  | [Maximilian Jäcklein](https://github.com/maxjae)        | 25.05.2026   | 08.06.2026     | 30     | C/C++, Rust | [link](./slides/04-concurrency.pdf)         | Lecture                                      |
+| [Memory Management] | [Maximilian Jäcklein](https://github.com/maxjae)        | 08.06.2026   | 22.06.2026     | 30     | C/C++, Rust | [link](./slides/05-memory_management.pdf)   | Lecture                                       |
+| Networking       | [Victor Trost](https://github.com/TrostV)               | 22.06.2026   | 06.07.2026     | 30     | C/C++, Rust | [link](./slides/06-network_programming.pdf) | Lecture                                       |
+| Compiler/LLVM  | [Victor Trost](https://github.com/TrostV)               | 06.07.2026   | 20.07.2026     | 30     | C++         | [link](./slides/07-llvm.pdf)         | Lecture                                       |
 
 
 Note that
