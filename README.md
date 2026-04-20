@@ -50,7 +50,7 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
 ## Meeting place
 
 - Preliminary meeting: Tues, Feb 11th @ 13:00 CET (Zoom)
-    - [Slide](./slides/preliminary_meeting.pdf).
+    - [Slides](./slides/preliminary_meeting.pdf).
     - [Zoom link](https://tum-conf.zoom-x.de/j/67953460706?pwd=XIWf0KcUS4oJMURHATfiFu3FdEQNXr.1).
 - Q&A session: Weekly on Thursday from 15:00 to 15:30 CEST online (zoom)
     - [Meet link](https://meet.google.com/wah-ctay-ggy).
@@ -66,7 +66,7 @@ The schedule may change. **Tasks are released on the publishing date at 15:00 (C
 | Task                                                                     | Organizer                                               | Published on | Deadline       | Points | Language | Slide                                          | Video                                                                         |
 |--------------------------------------------------------------------------|---------------------------------------------------------|--------------|----------------|--------|----------|------------------------------------------------|-------------------------------------------------------------------------------|
 | Introduction         | [Maximilian Jäcklein](https://github.com/karmagiel)       | 13.04.2026   | 20.04.2026     | 0      | C/C++, Rust | [Link](./slides/00-introduction.pdf)        |                                       |
-| System Calls    | [Christian Krinitsin](https://github.com/karmagiel)       | 20.04.2026   | 27.04.2026     | 30     | C/C++, Rust | [Link](./slides/01-system_calls.pdf)        | Lecture                                       |
+| System Calls    | [Christian Krinitsin](https://github.com/karmagiel)       | 20.04.2026   | 27.04.2026     | 30     | C/C++, Rust | [Link](./slides/01-system_calls.pdf)        | [Lecture](https://www.youtube.com/watch?v=1xjCqdRXMNc&list=PLfKm1-FQibbB3U8jBJ5-mF3jmH0aCiQ7V)                                       |
 | File I/O          | [Christian Krinitsin](https://github.com/ludof63)         | 27.04.2026   | 11.05.2026     | 30     | C/C++, Rust | [Link](./slides/02-files.pdf), [FUSE](./slides/02-fuse.pdf) | [Lecture](https://youtu.be/VgyHUqS_8Ro?si=nI9EqRIiLA9O9sXq)                                        |
 | Processes      | [Christian Krinitsin](https://github.com/ludof63)         | 11.05.2026   |25.05.2026     | 30     | C/C++, Rust | [Link](./slides/03-processes.pdf)           | [Lecture](https://youtu.be/4EQL6I1A8BU?si=IL9ycV4rMFqHf9Kc)                                       |
 | Concurrency  | [Maximilian Jäcklein](https://github.com/maxjae)        | 25.05.2026   | 08.06.2026     | 30     | C/C++, Rust | [Link](./slides/04-concurrency.pdf)         | [Lecture](https://youtu.be/-83VHl2AHV8?si=535M5B08QKJdQo9Y)                                      |
