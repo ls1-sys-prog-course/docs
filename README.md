@@ -49,12 +49,11 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
 
 ## Meeting place
 
-- Preliminary meeting: Tues, Feb 11th @ 13:00 CET (Zoom)
-    - [Slides](./slides/preliminary_meeting.pdf).
-    - [Zoom link](https://tum-conf.zoom-x.de/j/67953460706?pwd=XIWf0KcUS4oJMURHATfiFu3FdEQNXr.1).
-- Q&A session: Weekly on Thursday from 15:00 to 15:30 CEST online (zoom)
-    - [Meet link](https://meet.google.com/wah-ctay-ggy).
-    - The meeting starts exactly at 15:00 CEST but may finish earlier than 15:30 depending on the demand.
+- Preliminary meeting: Thursday, July 9th, 2026 (Zoom) — already held.
+    - Slides: _to be added_.
+- Q&A session: Weekly, day and time _to be announced_ (online).
+    - Meet link: _to be added_.
+    - The meeting starts exactly at the announced time and may finish earlier depending on the demand.
 
 ## Tasks
 
@@ -63,17 +62,17 @@ The schedule may change. **Tasks are released on the publishing date at 15:00 (C
 
 <!-- Points column must match points.conf - this is the source of truth for grade.sh -->
 
-| Task                                                                     | Organizer                                               | Published on | Deadline       | Points | Language | Slide                                          | Video                                                                         |
-|--------------------------------------------------------------------------|---------------------------------------------------------|--------------|----------------|--------|----------|------------------------------------------------|-------------------------------------------------------------------------------|
-| Introduction         | [Maximilian Jäcklein](https://github.com/karmagiel)       | 13.04.2026   | 20.04.2026     | 0      | C/C++, Rust | [Link](./slides/00-introduction.pdf)        |                                       |
-| System Calls    | [Christian Krinitsin](https://github.com/ckrinitsin)       | 20.04.2026   | 27.04.2026     | 30     | C/C++, Rust | [Link](./slides/01-system_calls.pdf)        | [Lecture](https://www.youtube.com/watch?v=1xjCqdRXMNc&list=PLfKm1-FQibbB3U8jBJ5-mF3jmH0aCiQ7V)                                       |
-| File I/O          | [Christian Krinitsin](https://github.com/ckrinitsin)         | 27.04.2026   | 11.05.2026     | 30     | C/C++, Rust | [Link](./slides/02-files.pdf), [FUSE](./slides/02-fuse.pdf) | [Lecture](https://youtu.be/VgyHUqS_8Ro?si=nI9EqRIiLA9O9sXq)                                        |
-| Processes      | [Maximilian Jäcklein](https://github.com/maxjae)         | 11.05.2026   |25.05.2026     | 30     | C/C++, Rust | [Link](./slides/03-processes.pdf)           | [Lecture](https://youtu.be/4EQL6I1A8BU?si=IL9ycV4rMFqHf9Kc)                                       |
-| Concurrency  | [Maximilian Jäcklein](https://github.com/maxjae)        | 25.05.2026   | 08.06.2026     | 30     | C/C++, Rust | [Link](./slides/04-concurrency.pdf)         | [Lecture](https://youtu.be/-83VHl2AHV8?si=535M5B08QKJdQo9Y)                                      |
-| Memory Management | [Christian Krinitsin](https://github.com/ckrinitsin)        | 08.06.2026   | 22.06.2026     | 30     | C/C++, Rust | [Link](./slides/05-memory_management.pdf)   | [Lecture](https://youtu.be/R0OwCRPySAQ?si=cuihQV7tu4Ug5EIM)                                       |
-| Networking       | [Victor Trost](https://github.com/TrostV)               | 22.06.2026   | 06.07.2026     | 30     | C/C++, Rust | [Link](./slides/06-network_programming.pdf) | [Lecture](https://youtu.be/dUqm5WZMM2M?si=i0CxJbrtHQjK7EnK)                                       |
-| Compiler/LLVM  | [Victor Trost](https://github.com/TrostV)               | 06.07.2026   | 20.07.2026     | 30     | C++         | [Link](./slides/07-llvm.pdf)         | [Lecture](https://youtu.be/jsTz1aB44lc)                                       |
-
+| Task              | Organizer | Published on | Deadline | Points | Language    | Slide   | Video   |
+|-------------------|-----------|--------------|----------|--------|-------------|---------|---------|
+| Introduction      | _TBA_     | _TBA_        | _TBA_    | 0      | C/C++, Rust | _TBA_   |         |
+| System Calls      | _TBA_     | _TBA_        | _TBA_    | 30     | C/C++, Rust | _TBA_   | _TBA_   |
+| File I/O          | _TBA_     | _TBA_        | _TBA_    | 30     | C/C++, Rust | _TBA_   | _TBA_   |
+| Processes         | _TBA_     | _TBA_        | _TBA_    | 30     | C/C++, Rust | _TBA_   | _TBA_   |
+| Concurrency       | _TBA_     | _TBA_        | _TBA_    | 30     | C/C++, Rust | _TBA_   | _TBA_   |
+| Memory Management | _TBA_     | _TBA_        | _TBA_    | 30     | C/C++, Rust | _TBA_   | _TBA_   |
+| Networking        | _TBA_     | _TBA_        | _TBA_    | 30     | C/C++, Rust | _TBA_   | _TBA_   |
+| Compiler/LLVM     | _TBA_     | _TBA_        | _TBA_    | 30     | C++         | _TBA_   | _TBA_   |
+ 
 
 Note that
 - 100% points lost if private tests detect cheating or we find a solution tries to game the system (modifying test scripts, etc.)
@@ -138,8 +137,10 @@ Grades are computed based on total points (210 max) as follows:
 
 ## Communication Medium
 
-We will use the official [Zulip chat](https://zulip.cit.tum.de/#narrow/channel/3511-SysProg---General) server hosted by TUM for all communication.
+We will use the official Zulip Chat server hosted by TUM for all communication.
+<!--[Zulip chat](https://zulip.cit.tum.de/#narrow/channel/3511-SysProg---General) -->
 
+<!--
 ## Other resources
 
 - [Youtube playlist](https://www.youtube.com/playlist?list=PLfKm1-FQibbB3U8jBJ5-mF3jmH0aCiQ7V)
@@ -147,12 +148,12 @@ We will use the official [Zulip chat](https://zulip.cit.tum.de/#narrow/channel/3
 - [Docker image](https://github.com/orgs/ls1-courses/packages/container/package/ls1-runner)
 - [The previous semester (WiSe25)](https://github.com/ls1-sys-prog-course-archive-WiSe25/docs)
   - NOTE: The course material is being kept updated; therefore, the old version has differences.
-
+-->
 ## Contact
 
 We *strongly* prefer Zulip for all communications. For any further questions/comments, please contact the course organizer(s):
 
+- [Nicolo Carpentieri](https://niccarp11.github.io/)
 - [Anubhav Panda](https://anubhavpanda.in/) 
-- [Theofilos Augoustis](https://taugoust.github.io/)
 - [Prof. Bhatotia](https://dse.in.tum.de/bhatotia/)
 
