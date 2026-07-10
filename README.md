@@ -1,4 +1,4 @@
-# Practical course: Systems Programming -- SoSe 2026
+# Practical course: Systems Programming -- WiSe 2026
 
 ## Chair website
 
