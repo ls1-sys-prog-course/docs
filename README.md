@@ -141,15 +141,15 @@ Grades are computed based on total points (210 max) as follows:
 We will use the official Zulip Chat server hosted by TUM for all communication.
 [SysProg - WiSe 26 - General](https://zulip.cit.tum.de/#narrow/channel/3724-SysProg---WiSe-26---General)
 
-<!--
+
 ## Other resources
 
 - [Youtube playlist](https://www.youtube.com/playlist?list=PLfKm1-FQibbB3U8jBJ5-mF3jmH0aCiQ7V)
 - [Bugtracker](https://github.com/ls1-sys-prog-course/docs/issues)
 - [Docker image](https://github.com/orgs/ls1-courses/packages/container/package/ls1-runner)
-- [The previous semester (WiSe25)](https://github.com/ls1-sys-prog-course-archive-WiSe25/docs)
+- [The previous semester (SS26)](https://github.com/ls1-sys-prog-course-archive-SS26/docs)
   - NOTE: The course material is being kept updated; therefore, the old version has differences.
--->
+
 ## Contact
 
 We *strongly* prefer Zulip for all communications. For any further questions/comments, please contact the course organizer(s):
