@@ -49,10 +49,11 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
 
 ## Meeting place
 
-- Preliminary meeting: Thursday, July 9th, 2026 (Zoom) — already held.
-    - Slides: _to be added_.
-- Q&A session: Weekly, day and time _to be announced_ (online).
-    - Meet link: _to be added_.
+- Preliminary meeting: Thursday, July 2th, 2026 (Zoom) — already held.
+    - Slides: [preliminary_meeting.pdf](slides/preliminary_meeting.pdf)
+- Q&A session: - Q&A session: Weekly on Thursdays, 15:00–15:30 (online), starting October 15th, 2026.
+    - Meet link: https://meet.google.com/wah-ctay-ggy
+    - No session on December 24th and 31st (Christmas break).
     - The meeting starts exactly at the announced time and may finish earlier depending on the demand.
 
 ## Tasks
