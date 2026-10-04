@@ -139,7 +139,7 @@ Grades are computed based on total points (210 max) as follows:
 ## Communication Medium
 
 We will use the official Zulip Chat server hosted by TUM for all communication.
-<!--[Zulip chat](https://zulip.cit.tum.de/#narrow/channel/3511-SysProg---General) -->
+[SysProg - WiSe 26 - General](https://zulip.cit.tum.de/#narrow/channel/3724-SysProg---WiSe-26---General)
 
 <!--
 ## Other resources
