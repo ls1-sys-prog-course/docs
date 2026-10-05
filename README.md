@@ -49,7 +49,7 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
 
 ## Meeting place
 
-- Preliminary meeting: Thursday, July 2th, 2026 (Zoom) — already held.
+- Preliminary meeting: Thursday, July 2nd, 2026 (Zoom) — already held.
     - Slides: [preliminary_meeting.pdf](slides/preliminary_meeting.pdf)
 - Q&A session: - Q&A session: Weekly on Thursdays, 15:00–15:30 (online), starting October 15th, 2026.
     - Meet link: https://meet.google.com/wah-ctay-ggy
@@ -63,16 +63,16 @@ The schedule may change. **Tasks are released on the publishing date at 15:00 (C
 
 <!-- Points column must match points.conf - this is the source of truth for grade.sh -->
 
-| Task              | Organizer           | Published on | Deadline     | Points | Language    | Slide   | Video   |
-|-------------------|---------------------|--------------|--------------|--------|-------------|---------|---------|
-| Introduction      | Maximilian Jäcklein | Oct 12, 2026 | Oct 19, 2026 | 0      | C/C++, Rust | _TBA_   |         |
-| System Calls      | Christian Krinitsin | Oct 19, 2026 | Nov 2, 2026  | 30     | C/C++, Rust | _TBA_   | _TBA_   |
-| File I/O          | Christian Krinitsin | Nov 2, 2026  | Nov 16, 2026 | 30     | C/C++, Rust | _TBA_   | _TBA_   |
-| Processes         | Maximilian Jäcklein | Nov 16, 2026 | Nov 30, 2026 | 30     | C/C++, Rust | _TBA_   | _TBA_   |
-| Concurrency       | Maximilian Jäcklein | Nov 30, 2026 | Dec 14, 2026 | 30     | C/C++, Rust | _TBA_   | _TBA_   |
-| Memory Management | Christian Krinitsin | Dec 14, 2026 | Jan 11, 2027 | 30     | C/C++, Rust | _TBA_   | _TBA_   |
-| Networking        | Maximilian Jäcklein | Jan 11, 2027 | Jan 25, 2027 | 30     | C/C++, Rust | _TBA_   | _TBA_   |
-| Compiler/LLVM     | Christian Krinitsin | Jan 25, 2027 | Feb 8, 2027  | 30     | C++         | _TBA_   | _TBA_   |
+| Task              | Organizer           | Published on | Deadline     | Points | Language    | Slide                                                       | Video                                                                                          |
+|-------------------|---------------------|--------------|--------------|--------|-------------|-------------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| Introduction      | Maximilian Jäcklein | Oct 12, 2026 | Oct 19, 2026 | 0      | C/C++, Rust | [Link](slides/00-introduction.pdf)                          |                                                                                                |
+| System Calls      | Christian Krinitsin | Oct 19, 2026 | Nov 2, 2026  | 30     | C/C++, Rust | [Link](slides/01-system_calls.pdf)                          | [Lecture](https://www.youtube.com/watch?v=1xjCqdRXMNc&list=PLfKm1-FQibbB3U8jBJ5-mF3jmH0aCiQ7V) |
+| File I/O          | Christian Krinitsin | Nov 2, 2026  | Nov 16, 2026 | 30     | C/C++, Rust | [Link](slides/02-files.pdf), [FUSE](slides/02-fuse.pdf)     | [Lecture](https://youtu.be/VgyHUqS_8Ro)                                                        |
+| Processes         | Maximilian Jäcklein | Nov 16, 2026 | Nov 30, 2026 | 30     | C/C++, Rust | [Link](slides/03-processes.pdf)                             | [Lecture](https://youtu.be/4EQL6I1A8BU)                                                        |
+| Concurrency       | Maximilian Jäcklein | Nov 30, 2026 | Dec 14, 2026 | 30     | C/C++, Rust | [Link](slides/04-concurrency.pdf)                           | [Lecture](https://youtu.be/-83VHl2AHV8)                                                        |
+| Memory Management | Christian Krinitsin | Dec 14, 2026 | Jan 11, 2027 | 30     | C/C++, Rust | [Link](slides/05-memory_management.pdf)                     | [Lecture](https://youtu.be/R0OwCRPySAQ)                                                        |
+| Networking        | Maximilian Jäcklein | Jan 11, 2027 | Jan 25, 2027 | 30     | C/C++, Rust | [Link](slides/06-network_programming.pdf)                   | [Lecture](https://youtu.be/dUqm5WZMM2M)                                                        |
+| Compiler/LLVM     | Christian Krinitsin | Jan 25, 2027 | Feb 8, 2027  | 30     | C++         | [Link](slides/07-llvm.pdf)                                  | [Lecture](https://youtu.be/jsTz1aB44lc)                                                        |
  
 
 Note that
