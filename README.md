@@ -51,8 +51,8 @@ The submitted workpieces will then be evaluated, and based on that, a grade will
 
 - Preliminary meeting: Thursday, July 2nd, 2026 (Zoom) — already held.
     - Slides: [preliminary_meeting.pdf](slides/preliminary_meeting.pdf)
-- Q&A session: - Q&A session: Weekly on Thursdays, 15:00–15:30 (online), starting October 15th, 2026.
-    - Meet link: https://meet.google.com/wah-ctay-ggy
+- Q&A session: Weekly on Thursdays, 15:00–15:30 (online), starting October 15th, 2026.
+    - Meet link: https://meet.google.com/gbx-vbti-vtq
     - No session on December 24th and 31st (Christmas break).
     - The meeting starts exactly at the announced time and may finish earlier depending on the demand.
 
